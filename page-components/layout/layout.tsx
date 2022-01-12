@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { ReactNode } from "react";
 import { GlobalStyles } from "@/styled/theme";
+import { Header } from "@/components/layout/header";
 
 
 type LayoutChildren = {
@@ -23,6 +24,7 @@ const Layout = ({ children } : LayoutChildren) =>{
         <title>CoffeeRoaster</title>
       </Head>
       <GlobalStyles />
+      <Header />
       { children }
       {/* Header */}
       {/* Footer */}

@@ -7,11 +7,11 @@ import { Theme } from "@/styled/theme";
 function MyApp({ Component, pageProps }: AppProps) {
   
   return (
-    <Layout>
-      <ThemeProvider theme={Theme}>
+    <ThemeProvider theme={Theme}>
+      <Layout>
         <Component {...pageProps} />
-      </ThemeProvider>
-    </Layout>
+      </Layout>
+    </ThemeProvider>
   )
 }
 

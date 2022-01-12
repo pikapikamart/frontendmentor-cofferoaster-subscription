@@ -8,15 +8,19 @@ declare module "styled-components" {
       darkGreyBlue: string,
       paleOrange: string,
       lightCream: string,
-      grey: String
+      grey: string
     },
     fontSizes: {
-      hSizeOne: string,
-      hSizeTwo: string,
-      hSizeThree: string,
-      hSizeFour: string,
-      hSizeFive: string,
-      navSizeOne: string
+      hSizeOne: number,
+      hSizeTwo: number,
+      hSizeThree: number,
+      hSizeFour: number,
+      hSizeFive: number,
+      navSizeOne: number
+    },
+    breakpoints: {
+      tablet: number,
+      desktop: number
     }
   }
 }

@@ -8,12 +8,16 @@ const Theme = {
     grey: "#83888F"
   },
   fontSizes: {
-    hSizeOne: "150",
-    hSizeTwo: "72",
-    hSizeThree: "40",
-    hSizeFour: "32",
-    hSizeFive: "24",
-    navSizeOne: "12" 
+    hSizeOne: 150,
+    hSizeTwo: 72,
+    hSizeThree: 40,
+    hSizeFour: 32,
+    hSizeFive: 24,
+    navSizeOne: 12 
+  },
+  breakpoints: {
+    tablet: 768,
+    desktop: 1000
   }
 }
 
