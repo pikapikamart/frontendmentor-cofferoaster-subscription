@@ -23,8 +23,7 @@ const NavMenu = () =>{
   return (
     <StyledNavMenu
       aria-label="primary"
-      id="navMenu"
-    >
+      id="navMenu">
       <StyledNavList>
         {renderLinks()}
       </StyledNavList>

@@ -1,13 +1,16 @@
-import { StyledHeader } from "./header.styled";
-import HeaderLogo from "./headerLogo";
-import Navbar from "./navbar"
+import { StyledHeader, StyledHeaderLogo } from "./header.styled";
+import Navbar from "./navbar/navbar";
 
 
 const Header = () =>{
 
   return (
     <StyledHeader>
-      <HeaderLogo />
+      <div>
+        <StyledHeaderLogo 
+          src="/shared/logo.svg"
+          alt="coffeeroasters" />
+      </div>
       <Navbar />
     </StyledHeader>
   );

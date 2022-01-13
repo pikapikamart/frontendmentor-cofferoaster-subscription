@@ -1,13 +1,12 @@
 import { NextPage } from "next";
+import { Home } from "@/page-components/home";
 
 
-const HomePage:NextPage = () =>{
+const HomePage: NextPage = () =>{
 
   return (
-    <div>
-      test
-    </div>
+    <Home />
   );
 }
 
-export default HomePage; 
+export default HomePage;

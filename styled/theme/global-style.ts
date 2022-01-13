@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { fluid } from "../functions";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -87,6 +88,16 @@ const GlobalStyle = createGlobalStyle`
   h3,
   h4 {
     font-family: 'Fraunces', serif;
+  }
+
+  /* Custom for the site */
+  
+  main {
+    padding: 0 ${fluid(24, 5, 80)};
+  }
+
+  p {
+    line-height: 1.625;
   }
 
   @media (prefers-reduce-motion: reduce) {
