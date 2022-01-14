@@ -3,7 +3,7 @@ import { HeroContainer } from "@/styled/shared/hero.styled";
 import { rem, fluid, breakpoint } from "@/styled/functions";
 
 
-export const StyledHomeHero = styled(HeroContainer)`
+export const StyledHero = styled(HeroContainer)`
   background-image: url("/home/mobile/image-hero-coffeepress.jpg");
   margin-bottom: ${fluid(120, 10, 136)};
   min-height: ${fluid(500, 46, 600)};

@@ -1,4 +1,6 @@
-import { StyledHeader, StyledHeaderLogo } from "./header.styled";
+import { 
+  StyledHeader, 
+  StyledHeaderLogo } from "./header.styled";
 import Navbar from "./navbar/navbar";
 
 

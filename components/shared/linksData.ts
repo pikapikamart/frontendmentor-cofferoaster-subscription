@@ -3,14 +3,17 @@
 export const LinksData = [
   {
     name: "Home",
-    link: "/"
+    link: "/",
+    id: "homeLink"
   },
   {
     name: "About Us",
-    link: "/about-us"
+    link: "/about-us",
+    id: "aboutLink"
   },
   {
     name: "Create Your Plan",
-    link: "/create-your-plan"
+    link: "/create-your-plan",
+    id: "planLink"
   }
 ]
