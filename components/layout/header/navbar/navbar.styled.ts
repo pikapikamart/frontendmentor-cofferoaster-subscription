@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { rem } from "@/styled/functions";
+import { rem, breakpoint } from "@/styled/functions";
 import { Fraunces, Barlow, FlexCenter } from "@/styled/shared/extensions";
 
 
@@ -15,9 +15,9 @@ export const StyledHamburger = styled.button`
     background-image: url("/shared/mobile/icon-close.svg");
   }
 
-  @media (min-width: ${props => rem(props.theme.breakpoints.tablet)}) {
+  ${breakpoint("tablet", `
     display: none;
-  }
+  `)}
 `
 
 export const StyledNavMenu = styled.nav`
@@ -35,35 +35,37 @@ export const StyledNavMenu = styled.nav`
     visibility: visible;
   }
 
-  @media (min-width: ${props => rem(props.theme.breakpoints.tablet)}) {
+  ${breakpoint("tablet", `
     background-image: none;
     opacity: 1;
     padding-top: 0;
     position: static;
     visibility: visible;
-  }
+  `)}
 `
 
 export const StyledNavList = styled.ul`
   ${FlexCenter}
-  color: ${props => props.theme.colors.darkGreyBlue};
+  color: ${({ theme }) => theme.colors.darkGreyBlue};
   flex-direction: column;
   font-weight: 700;
-  font-size: ${props => rem(props.theme.fontSizes.hSizeFive)};
+  font-size: ${({ theme }) => rem(theme.fontSizes.hSizeFive)};
   gap: ${rem(32)};
 
-  @media (min-width: ${props => rem(props.theme.breakpoints.tablet)}) {
-    color: ${props => props.theme.colors.grey};
-    flex-direction: row;
-    ${Barlow}
-    font-size: ${props => rem(props.theme.fontSizes.navSizeOne)};
-    font-weight: 700;
-    gap: 0 ${rem(32)};
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
+  ${({ theme }) => `
+    ${breakpoint("tablet", `
+      color: ${theme.colors.grey};
+      flex-direction: row;
+      ${Barlow}
+      font-size: ${rem(theme.fontSizes.navSizeOne)};
+      font-weight: 700;
+      gap: 0 ${rem(32)};
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    `)}
+  `}
 
-  @media (max-width: ${props => rem(props.theme.breakpoints.tablet)}) {
+  @media (max-width: ${({ theme }) => rem(theme.breakpoints.tablet)}) {
     ${Fraunces}
   }
 `

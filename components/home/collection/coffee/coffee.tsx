@@ -13,7 +13,7 @@ const CoffeeList = () =>{
   const renderCoffees = () =>{
     const coffees = CoffeeData.map(coffee =>(
       <StyledCoffeeContainer key={coffee.id}>
-        <StyledCoffeeImage src={coffee.image} />
+        <StyledCoffeeImage src={coffee.image} alt="" />
         <div>
           <StyledCoffeeHeading>{coffee.name}</StyledCoffeeHeading>
           <StyledCoffeeText>{coffee.description}</StyledCoffeeText>

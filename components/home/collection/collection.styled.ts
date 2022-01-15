@@ -3,6 +3,7 @@ import { rem, fluid, breakpoint } from "@/styled/functions";
 
 
 export const StyledCollection = styled.div`
+  margin-bottom: ${rem(120)};
   text-align: center;
 `
 

@@ -1,7 +1,7 @@
 import { 
   StyledNavMenu, 
   StyledNavList } from "./navbar.styled";
-import { LinksData } from "@/components/shared/linksData";
+import { LinksData } from "@/components/shared/data/linksData";
 import Link from "next/link";
 import { useRouter } from "next/router";
 

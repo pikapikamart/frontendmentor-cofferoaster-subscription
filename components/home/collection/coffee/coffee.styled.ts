@@ -1,10 +1,16 @@
 import styled from "styled-components";
 import { rem, fluid, breakpoint } from "@/styled/functions";
-import { FlexCenter } from "@/styled/shared/extensions";
+import { 
+  FlexCenter, 
+  FlexColumnCenter } from "@/styled/shared/extensions";
+import { DarkText } from "@/styled/shared/text.styled";
 
 
 export const StyledCoffeeList = styled.ul`
+  ${FlexCenter}
+  align-items: flex-start;
   color: ${({ theme }) => theme.colors.darkGreyBlue};
+  flex-wrap: wrap;
 
   ${breakpoint("tablet", `
     gap: 0 ${rem(36)};
@@ -13,9 +19,6 @@ export const StyledCoffeeList = styled.ul`
   `)}
 
   ${breakpoint("desktop", `
-    ${FlexCenter}
-    align-items: flex-start;
-    flex-wrap: wrap;
     gap: 0 ${rem(29)};
     text-align: center;
     transform: translateY(-${rem(54)});
@@ -23,8 +26,7 @@ export const StyledCoffeeList = styled.ul`
 `
 
 export const StyledCoffeeContainer = styled.li`
-  ${FlexCenter}
-  flex-direction: column;
+  ${FlexColumnCenter}
   gap: ${rem(24)};
 
   &:not(:last-of-type) {
@@ -52,12 +54,9 @@ export const StyledCoffeeImage = styled.img`
 `
 
 export const StyledCoffeeHeading = styled.h3`
+  font-weight: 900;
   margin-bottom: ${rem(16)};
-
-  ${({ theme }) => `
-    color: ${theme.colors.darkGreyBlue};
-    font-size: ${rem(theme.fontSizes.hSizeFive)};
-  `}
+  font-size: ${({ theme }) => rem(theme.fontSizes.hSizeFive)};
 
   ${breakpoint("desktop", `
     margin-bottom: ${rem(24)};
@@ -65,6 +64,6 @@ export const StyledCoffeeHeading = styled.h3`
 
 `
 
-export const StyledCoffeeText = styled.p`
+export const StyledCoffeeText = styled(DarkText)`
   max-width: ${rem(282)};
 `
