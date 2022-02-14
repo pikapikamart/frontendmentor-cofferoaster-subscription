@@ -4,6 +4,7 @@ import { WhiteText } from "@/styled/shared/text.styled";
 
 
 export const StyledChoose = styled.div`
+  margin-bottom: ${fluid(120, 18.5, 200)};
   padding: ${fluid(64, 8, 100)} ${rem(24)} 0;
   position: relative;
   text-align: center;
@@ -26,7 +27,6 @@ export const StyledChoose = styled.div`
 `
 
 export const StyledChooseHeading = styled.h2`
-  font-weight: 900;
   line-height: 1.2;
   margin-bottom: ${fluid(24, 3, 32)};
 

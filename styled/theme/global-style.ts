@@ -88,6 +88,7 @@ const GlobalStyle = createGlobalStyle`
   h3,
   h4 {
     font-family: 'Fraunces', serif;
+    font-weight: 700;
   }
 
   /* Custom for the site */

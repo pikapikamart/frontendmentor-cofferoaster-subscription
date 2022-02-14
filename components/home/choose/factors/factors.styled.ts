@@ -87,7 +87,6 @@ export const StyledFactorImage = styled.img`
 `
 
 export const StyledFactorHeading = styled.h3`
-  font-weight: 900;
   font-size: ${({ theme }) => rem(theme.fontSizes.hSizeFive)};
   line-height: 1.33;
   margin-bottom: ${rem(24)};

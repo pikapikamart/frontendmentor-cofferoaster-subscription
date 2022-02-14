@@ -8,7 +8,6 @@ export const StyledCollection = styled.div`
 `
 
 export const StyledCollectionHeading = styled.h2`
-  font-weight: 900;
   line-height: 1.82;
   letter-spacing: .37px;
   margin-bottom: ${rem(13)};

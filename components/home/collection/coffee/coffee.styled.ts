@@ -54,7 +54,6 @@ export const StyledCoffeeImage = styled.img`
 `
 
 export const StyledCoffeeHeading = styled.h3`
-  font-weight: 900;
   margin-bottom: ${rem(16)};
   font-size: ${({ theme }) => rem(theme.fontSizes.hSizeFive)};
 

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { rem, fluid } from "@/styled/functions";
-import { Fraunces, FlexCenter } from "../../styled/shared/extensions"; 
-import { StyledHomeHero } from "../home/hero/hero.styled";
+import { Fraunces, FlexCenter } from "@/styled/shared/extensions";
+import { StyledHero } from "@/components/home/hero/hero.styled";
 
 
 export const StyledCreatePlan = styled.a`
@@ -17,7 +17,7 @@ export const StyledCreatePlan = styled.a`
   line-height: 1.34;
   width: ${rem(218)};
 
-  ${StyledHomeHero} & {
+  ${StyledHero} & {
     margin-top: ${fluid(16, 2, 24)};
   }
 `
