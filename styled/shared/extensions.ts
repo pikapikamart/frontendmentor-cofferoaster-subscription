@@ -29,6 +29,7 @@ export const FlexRowBetween = css`
 
 export const HeroContainer = css`
   ${FlexCenter}
+  
   border-radius: ${rem(10)};
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -39,6 +40,8 @@ export const HeroContainer = css`
   text-align: center;
 
   ${breakpoint("tablet", `
+    align-items: flex-start;  
     padding: 0 0 0 ${fluid(60, 5, 85)};
+    text-align: left;
   `)}
 `

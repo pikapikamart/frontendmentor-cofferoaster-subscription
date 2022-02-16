@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { renderNavLinks } from "@/components/shared/functions";
 import { socialMedias } from "@/components/shared/data/socialMedias";
 import { SrOnly } from "@/styled/shared/helpers";
+import { css } from "styled-components";
 
 
 const Footer = () =>{

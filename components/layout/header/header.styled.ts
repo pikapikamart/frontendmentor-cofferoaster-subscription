@@ -6,7 +6,7 @@ export const StyledHeader = styled.header`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: ${fluid(32, 5.2, 43.56)} ${fluid(24, 5.6, 80)} ${fluid(40, 6, 43)};
+  padding: ${fluid(32, 5.2, 43.56)} 0 ${fluid(40, 6, 43)};
 `
 
 export const StyledHeaderLogo = styled.img`

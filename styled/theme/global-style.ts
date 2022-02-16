@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { fluid } from "../functions";
+import { rem, fluid } from "../functions";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -78,6 +78,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Barlow', sans-serif;
     min-height: 100vh;
+    max-width: ${rem(1600)};
+    margin: 0 auto;
     padding: 0 ${fluid(24, 5.8, 80)} ${fluid(72, 7, 88)};
   }
 
@@ -93,6 +95,15 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     line-height: 1.625;
+  }
+
+  a,
+  button {
+
+    &:focus-visible {
+      outline: 3px dashed rgb(104, 190, 205);
+      outline-offset: ${rem(3)};
+    }
   }
 
   @media (prefers-reduce-motion: reduce) {

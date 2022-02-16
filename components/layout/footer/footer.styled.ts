@@ -47,4 +47,8 @@ export const StyledSocialMedias = styled.ul`
   ${breakpoint("desktop", `
     margin-left: auto;
   `)}
+
+  a {
+    display: block;
+  }
 `
