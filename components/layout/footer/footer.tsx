@@ -1,24 +1,45 @@
-import { StyledFooter } from "./footer.styled";
-import { LinksData } from "@/components/shared/data/linksData";
-import Link from "next/link";
+import { 
+  StyledFooter,
+  StyledFooterLogo,
+  StyledNavList,
+  StyledSocialMedias } from "./footer.styled";
+import { useRouter } from "next/router";
+import { renderNavLinks } from "@/components/shared/functions";
+import { socialMedias } from "@/components/shared/data/socialMedias";
+import { SrOnly } from "@/styled/shared/helpers";
 
 
 const Footer = () =>{
+  const currentPath = useRouter().pathname;
 
-  const renderNavlinks = () =>{
-    const links = LinksData.map(link =>(
+  const renderSocialMedias = () =>{
+    const links = socialMedias.map(link =>(
       <li key={link.id}>
-        <Link href={link.link}>
-          {/* {currentPath===link.link ? <a aria-current="page">{link.name}</a>: <a>{link.name}</a>} */}
-        </Link>
+        <a href={link.url}>
+          <SrOnly>{link.name}</SrOnly>
+          <img src={link.image} alt="" aria-hidden="true" />
+        </a>
       </li>
-    ))
+    ));
 
+    return links;
   }
 
   return (
     <StyledFooter>
-      
+      <div>
+        <StyledFooterLogo 
+          src="/shared/logo-footer.svg"
+          alt="coffeeroasters" />
+      </div>
+      <nav>
+        <StyledNavList>
+          {renderNavLinks("footer", currentPath)}
+        </StyledNavList>
+      </nav>
+      <StyledSocialMedias>
+        {renderSocialMedias()}
+      </StyledSocialMedias>
     </StyledFooter>
   );
 }

@@ -1,6 +1,6 @@
 
 
-export const LinksData = [
+export const navLinksData = [
   {
     name: "Home",
     link: "/",

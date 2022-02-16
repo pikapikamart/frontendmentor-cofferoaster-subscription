@@ -32,10 +32,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
-  body {
-    min-height: 100vh;
-  }
-
   body,
   h1,
   h2,
@@ -81,7 +77,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Barlow', sans-serif;
-    padding: 0 ${fluid(24, 5.8, 80)};
+    min-height: 100vh;
+    padding: 0 ${fluid(24, 5.8, 80)} ${fluid(72, 7, 88)};
   }
 
   h1,
