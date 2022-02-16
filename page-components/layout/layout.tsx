@@ -2,6 +2,7 @@ import Head from "next/head";
 import { ReactNode } from "react";
 import { GlobalStyles } from "@/styled/theme";
 import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 
 
 interface LayoutChildren{
@@ -26,8 +27,7 @@ const Layout = ({ children } : LayoutChildren) =>{
       <GlobalStyles />
       <Header />
       { children }
-      {/* Header */}
-      {/* Footer */}
+      <Footer />
     </>
   );
 }

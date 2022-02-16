@@ -81,6 +81,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Barlow', sans-serif;
+    padding: 0 ${fluid(24, 5.8, 80)};
   }
 
   h1,
@@ -92,10 +93,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   /* Custom for the site */
-  
-  main {
-    padding: 0 ${fluid(24, 5.8, 80)};
-  }
 
   p {
     line-height: 1.625;

@@ -5,7 +5,9 @@ import { FlexColumnCenter } from "@/styled/shared/extensions";
 
 export const StyledWorks = styled.div`
   ${FlexColumnCenter}
+  
   gap: ${rem(80)} 0;
+  margin-bottom: ${fluid(120, 15, 200)};
   text-align: center;
 
   ${breakpoint("tablet", `

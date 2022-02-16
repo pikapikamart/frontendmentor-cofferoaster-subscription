@@ -1,11 +1,16 @@
 import { useExpansion } from "@/lib/hooks";
-import { StyledHamburger } from "./navbar.styled";
+import { 
+  StyledHamburger,
+  StyledNavMenu,
+  StyledNavList } from "./navbar.styled";
 import { SrOnly } from "@/styled/shared/helpers";
-import NavMenu from "./navMenu";
+import { useRouter } from "next/router";
+import { renderNavLinks } from "@/components/shared/functions";
 
 
 const Navbar = () =>{
   const { isExpanded, handleExpansion } = useExpansion();
+  const currentPath = useRouter().pathname;
 
   return (
     <div>
@@ -17,8 +22,13 @@ const Navbar = () =>{
           {`${isExpanded? "close" : "open"} menu navigation`}
         </SrOnly>
       </StyledHamburger>
-      {/* Framer */}
-      <NavMenu />
+      <StyledNavMenu
+        aria-label="primary"
+        id="navMenu">
+        <StyledNavList>
+          {renderNavLinks("header", currentPath)}
+        </StyledNavList>
+      </StyledNavMenu>
     </div>
   )
 };
