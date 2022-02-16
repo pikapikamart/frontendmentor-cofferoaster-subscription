@@ -4,7 +4,7 @@ import { GlobalStyles } from "@/styled/theme";
 import { Header } from "@/components/layout/header";
 
 
-type LayoutChildren = {
+interface LayoutChildren{
   children: ReactNode
 }
 

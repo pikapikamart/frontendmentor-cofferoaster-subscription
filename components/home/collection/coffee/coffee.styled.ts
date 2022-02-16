@@ -6,7 +6,7 @@ import {
 import { DarkText } from "@/styled/shared/text.styled";
 
 
-export const StyledCoffeeList = styled.ul`
+export const StyledCoffeesList = styled.ul`
   ${FlexCenter}
   align-items: flex-start;
   color: ${({ theme }) => theme.colors.darkGreyBlue};
@@ -25,7 +25,7 @@ export const StyledCoffeeList = styled.ul`
   `)}
 `
 
-export const StyledCoffeeContainer = styled.li`
+export const StyledCoffee = styled.li`
   ${FlexColumnCenter}
   gap: ${rem(24)};
 
@@ -58,6 +58,7 @@ export const StyledCoffeeHeading = styled.h3`
   font-size: ${({ theme }) => rem(theme.fontSizes.hSizeFive)};
 
   ${breakpoint("desktop", `
+    line-height: 1.333;
     margin-bottom: ${rem(24)};
   `)}
 

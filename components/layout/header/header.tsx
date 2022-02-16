@@ -1,7 +1,7 @@
 import { 
   StyledHeader, 
   StyledHeaderLogo } from "./header.styled";
-import Navbar from "./navbar/navbar";
+import { Navbar } from "./navbar";
 
 
 const Header = () =>{

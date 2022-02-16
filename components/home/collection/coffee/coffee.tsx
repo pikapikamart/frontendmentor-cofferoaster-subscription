@@ -1,7 +1,7 @@
 import { CoffeeData } from "./coffeeData";
 import { 
-  StyledCoffeeList,
-  StyledCoffeeContainer,
+  StyledCoffeesList,
+  StyledCoffee,
   StyledCoffeeImage,
   StyledCoffeeHeading,
   StyledCoffeeText
@@ -12,13 +12,13 @@ const CoffeeList = () =>{
 
   const renderCoffees = () =>{
     const coffees = CoffeeData.map(coffee =>(
-      <StyledCoffeeContainer key={coffee.id}>
+      <StyledCoffee key={coffee.id}>
         <StyledCoffeeImage src={coffee.image} alt="" />
         <div>
           <StyledCoffeeHeading>{coffee.name}</StyledCoffeeHeading>
           <StyledCoffeeText>{coffee.description}</StyledCoffeeText>
         </div>
-      </StyledCoffeeContainer>
+      </StyledCoffee>
       )
     )
 
@@ -26,9 +26,9 @@ const CoffeeList = () =>{
   }
 
   return (
-    <StyledCoffeeList>
+    <StyledCoffeesList>
       {renderCoffees()}
-    </StyledCoffeeList>
+    </StyledCoffeesList>
   );
 }
 

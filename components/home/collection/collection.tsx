@@ -1,7 +1,7 @@
 import { 
   StyledCollection,
   StyledCollectionHeading } from "./collection.styled";
-import CoffeeList from "./coffee/coffee";
+import { CoffeeList } from "./coffee";
 
 
 const Collection = () =>{

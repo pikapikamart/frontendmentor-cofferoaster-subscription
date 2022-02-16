@@ -22,12 +22,17 @@ export const FlexColumnCenter = css`
   flex-direction: column;
 `
 
+export const FlexRowBetween = css`
+  display: flex;
+  justify-content: space-between;
+`
+
 export const HeroContainer = css`
   ${FlexCenter}
   border-radius: ${rem(10)};
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  color: ${props => props.theme.colors.lightCream};
+  color: ${({ theme }) => theme.colors.lightCream};
   flex-direction: column;
   gap: ${fluid(24, 2.5, 32)} 0;
   padding: 0 ${rem(24)};

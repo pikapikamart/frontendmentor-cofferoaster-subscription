@@ -22,7 +22,7 @@ export const StyledFactorsList = styled.ul`
   `)}
 `
 
-export const StyledFactorContainer = styled.li`
+export const StyledFactor = styled.li`
   ${FlexColumnCenter}
   background-color: ${({ theme }) => theme.colors.darkCyan};
   border-radius: ${rem(8)};

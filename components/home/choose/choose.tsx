@@ -2,7 +2,7 @@ import {
   StyledChoose,
   StyledChooseHeading,
   StyledChooseIntro } from "./choose.styled"
-import FactorsList from "./factors/factors";
+import { FactorsList } from "./factors";
 
 
 const Choose = () =>{

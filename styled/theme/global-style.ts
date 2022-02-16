@@ -94,7 +94,7 @@ const GlobalStyle = createGlobalStyle`
   /* Custom for the site */
   
   main {
-    padding: 0 ${fluid(24, 7, 80)};
+    padding: 0 ${fluid(24, 5.8, 80)};
   }
 
   p {

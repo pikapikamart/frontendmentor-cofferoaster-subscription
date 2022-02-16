@@ -1,7 +1,7 @@
 import { StyledHero } from "./hero.styled";
 import { Heading1 } from "@/styled/shared/headings.styled";
 import { HeroText } from "@/styled/shared/hero.styled";
-import CreatePlan from "@/components/shared/createPlan";
+import { CreatePlan } from "@/components/shared/createPlan";
 
 
 const Hero = () =>{

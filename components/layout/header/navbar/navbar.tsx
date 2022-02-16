@@ -1,6 +1,6 @@
 import { useExpansion } from "@/lib/hooks";
 import { StyledHamburger } from "./navbar.styled";
-import { SrOnly } from "@/styled/shared/sr-only.styled";
+import { SrOnly } from "@/styled/shared/helpers";
 import NavMenu from "./navMenu";
 
 

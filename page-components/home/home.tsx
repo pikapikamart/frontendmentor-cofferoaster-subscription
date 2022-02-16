@@ -1,6 +1,7 @@
 import { Hero } from "@/components/home/hero";
 import { Collection } from "@/components/home/collection";
 import { Choose } from "@/components/home/choose";
+import { Works } from "@/components/home/works";
 
 
 const Home = () =>{
@@ -10,6 +11,7 @@ const Home = () =>{
       <Hero />
       <Collection />
       <Choose />
+      <Works />
     </main>
   );
 }

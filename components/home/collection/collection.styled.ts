@@ -3,7 +3,7 @@ import { rem, fluid, breakpoint } from "@/styled/functions";
 
 
 export const StyledCollection = styled.div`
-  margin-bottom: ${rem(120)};
+  margin-bottom: ${fluid(120, 15, 200)};
   text-align: center;
 `
 
@@ -24,5 +24,9 @@ export const StyledCollectionHeading = styled.h2`
   background-image: linear-gradient(0deg, #f5f5f5, #d4d4d4);
   line-height: .75;
   margin-bottom: 0;
+  `)}
+
+  ${breakpoint("desktop", `
+    padding-top: ${rem(13.5)};
   `)}
 `

@@ -1,7 +1,7 @@
 import { FactorsData } from "./factorsData";
 import { 
   StyledFactorsList,
-  StyledFactorContainer,
+  StyledFactor,
   StyledFactorImage,
   StyledFactorHeading,
  } from "./factors.styled";
@@ -12,13 +12,13 @@ const FactorsList = () =>{
 
   const renderFactors = () =>{
     const factors = FactorsData.map( factor => (
-      <StyledFactorContainer key={factor.id}>
+      <StyledFactor key={factor.id}>
         <StyledFactorImage src={factor.image} alt="" />
         <div>
           <StyledFactorHeading>{factor.name}</StyledFactorHeading>
           <WhiteText>{factor.description}</WhiteText>
         </div>
-      </StyledFactorContainer>
+      </StyledFactor>
     ));
 
     return factors;
