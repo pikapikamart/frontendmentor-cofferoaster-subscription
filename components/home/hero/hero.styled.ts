@@ -18,7 +18,3 @@ export const StyledHero = styled.div`
     background-image: url("/home/desktop/image-hero-coffeepress.jpg");
   `)}
 `
-
-export const StyledHeroHeading = styled.h1`
-
-`

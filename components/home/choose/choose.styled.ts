@@ -4,6 +4,7 @@ import { WhiteText } from "@/styled/shared/text.styled";
 
 
 export const StyledChoose = styled.div`
+  color: ${({ theme }) => theme.colors.lightCream};
   margin-bottom: ${fluid(120, 18.5, 200)};
   padding: ${fluid(64, 8, 100)} ${rem(24)} 0;
   position: relative;
@@ -24,16 +25,6 @@ export const StyledChoose = styled.div`
       height: ${rem(577)};
     }
   `)}
-`
-
-export const StyledChooseHeading = styled.h2`
-  line-height: 1.2;
-  margin-bottom: ${fluid(24, 3, 32)};
-
-  ${({ theme }) =>`
-    color: ${theme.colors.lightCream};
-    font-size: ${fluid(28, 4, theme.fontSizes.hSizeThree)};
-  `}
 `
 
 export const StyledChooseIntro = styled(WhiteText)`

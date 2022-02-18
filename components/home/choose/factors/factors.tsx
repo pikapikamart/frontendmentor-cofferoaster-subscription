@@ -13,7 +13,7 @@ const FactorsList = () =>{
   const renderFactors = () =>{
     const factors = FactorsData.map( factor => (
       <StyledFactor key={factor.id}>
-        <StyledFactorImage src={factor.image} alt="" />
+        <StyledFactorImage src={factor.image} alt="" aria-hidden="true" />
         <div>
           <StyledFactorHeading>{factor.name}</StyledFactorHeading>
           <WhiteText>{factor.description}</WhiteText>

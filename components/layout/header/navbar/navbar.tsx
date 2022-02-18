@@ -6,11 +6,18 @@ import {
 import { SrOnly } from "@/styled/shared/helpers";
 import { useRouter } from "next/router";
 import { renderNavLinks } from "@/components/shared/functions";
+import { useEffect } from "react";
 
 
 const Navbar = () =>{
   const { isExpanded, handleExpansion } = useExpansion();
   const currentPath = useRouter().pathname;
+
+  useEffect(() =>{
+    if ( isExpanded ) {
+      handleExpansion();
+    }
+  }, [ currentPath ])
 
   return (
     <div>

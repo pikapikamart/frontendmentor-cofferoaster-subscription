@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { rem, fluid, breakpoint } from "@/styled/functions";
+import { rem, breakpoint } from "@/styled/functions";
 import { 
   FlexCenter, 
   FlexColumnCenter } from "@/styled/shared/extensions";
@@ -46,11 +46,6 @@ export const StyledCoffee = styled.li`
       margin-bottom: 0;
     }
   `)}
-`
-
-export const StyledCoffeeImage = styled.img`
-  height: ${fluid(151, 28, 193)};
-  width: ${fluid(200, 36, 256)};
 `
 
 export const StyledCoffeeHeading = styled.h3`

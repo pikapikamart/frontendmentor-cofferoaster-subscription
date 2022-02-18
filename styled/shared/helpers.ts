@@ -11,3 +11,7 @@ export const SrOnly = styled.span`
   position: absolute;
   width: 1px;
 `
+
+export const Relative = styled.div`
+  position: relative;
+`
