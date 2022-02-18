@@ -6,7 +6,7 @@ import { WhiteText } from "@/styled/shared/text.styled";
 
 export const StyledCommitment = styled.div`
   color: ${({ theme }) => theme.colors.darkGreyBlue};
-  margin: 0 auto ;
+  margin: 0 auto ${rem(198)};
   max-width: ${rem(450)};
   text-align: center;
 

@@ -1,5 +1,6 @@
 import { Hero } from "@/components/about/hero";
 import { Values } from "@/components/about/values";
+import { Headquarters } from "@/components/about/headquarters";
 
 
 const AboutUs = () =>{
@@ -8,6 +9,7 @@ const AboutUs = () =>{
     <main>
       <Hero />
       <Values />
+      <Headquarters />
     </main>
   );
 }
