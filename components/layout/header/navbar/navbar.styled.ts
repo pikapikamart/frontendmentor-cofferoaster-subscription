@@ -29,6 +29,7 @@ export const StyledNavMenu = styled.nav`
   transition: opacity .3s ease,
             visibility .3s ease;
   visibility: hidden;
+  z-index: 5;
 
   ${StyledHamburger}[aria-expanded="true"] + && {
     opacity: 1;
@@ -45,7 +46,9 @@ export const StyledNavMenu = styled.nav`
 `
 
 export const StyledNavList = styled.ul`
+  ${Fraunces}
   ${FlexCenter}
+
   color: ${({ theme }) => theme.colors.darkGreyBlue};
   flex-direction: column;
   font-weight: 700;
@@ -64,8 +67,4 @@ export const StyledNavList = styled.ul`
       text-transform: uppercase;
     `)}
   `}
-
-  @media (max-width: ${({ theme }) => rem(theme.breakpoints.tablet)}) {
-    ${Fraunces}
-  }
 `

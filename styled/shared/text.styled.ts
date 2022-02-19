@@ -17,7 +17,7 @@ export const HeroHeading = styled.h1`
   max-width: 11ch;
 
   ${({ theme }) => `
-  font-size: ${fluid(theme.fontSizes.hSizeThree, 6.4, theme.fontSizes.hSizeTwo)};
+    font-size: ${fluid(theme.fontSizes.hSizeThree, 6.4, theme.fontSizes.hSizeTwo)};
   `}
 `
 

@@ -17,7 +17,7 @@ const Values = () =>{
         <StyledCommitmentPicture>
           <source  media="(min-width: 1000px)" srcSet="/about/desktop/image-commitment.jpg"/>
           <source  media="(min-width: 768px)" srcSet="/about/tablet/image-commitment.jpg"/>
-          <img src="/about/mobile/image-commitment.jpg"  alt=""/>
+          <img src="/about/mobile/image-commitment.jpg"  alt="man making coffee latte art"/>
         </StyledCommitmentPicture>
         <div>
           <Heading2>Our commitment</Heading2>
@@ -30,7 +30,7 @@ const Values = () =>{
           <picture>
             <source media="(min-width: 1000px)" srcSet="/about/desktop/image-quality.jpg" />
             <source media="(min-width: 768px)" srcSet="/about/tablet/image-quality.jpg" />
-            <StyledQualityImage src="/about/mobile/image-quality.jpg" alt="" />
+            <StyledQualityImage src="/about/mobile/image-quality.jpg" alt="a coffee with a latte art" />
           </picture>
         </Relative>
         <StyledQualityText>

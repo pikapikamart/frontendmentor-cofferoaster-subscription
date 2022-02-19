@@ -13,7 +13,7 @@ export const navLinksData = [
   },
   {
     name: "Create Your Plan",
-    link: "/create-your-plan",
+    link: "/create-plan",
     id: "planLink"
   }
 ]
