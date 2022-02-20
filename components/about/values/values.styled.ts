@@ -59,7 +59,7 @@ export const StyledQuality = styled.div`
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    padding: 0 ${rem(85)} 0;
+    padding: 0 ${fluid(36, 6.3, 85)} ${rem(48)};
     text-align: left;
   `)}
 `
@@ -84,7 +84,7 @@ export const StyledQualityText = styled.div`
   }
 
   ${breakpoint("desktop", `
-    max-width: ${rem(540)};
+    max-width: ${fluid(360, 40, 540)};
     padding-top: ${rem(88)};
   `)}
 `

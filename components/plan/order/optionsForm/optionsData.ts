@@ -14,7 +14,7 @@ export interface Option {
   choices: Choices[]
 }
 
-export const OptionsData = [
+export const OptionsData: Option[] = [
   {
     id: "order-coffee",
     question: "How do you drink your coffee?",

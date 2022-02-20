@@ -6,7 +6,6 @@ import { FlexColumnCenter } from "@/styled/shared/extensions";
 export const StyledFooter = styled.footer`
   ${FlexColumnCenter}
 
-  gap: ${rem(48.5)} 0;
   padding: ${rem(54)} 0;  
 
   ${({ theme }) =>`
@@ -18,7 +17,6 @@ export const StyledFooter = styled.footer`
 
   ${breakpoint("desktop", `
     flex-direction: row;
-    gap: 0 ${rem(102)};
     padding: ${rem(47)} ${rem(85)};
   `)}
 `
@@ -31,12 +29,17 @@ export const StyledNavList = styled.ul`
   ${FlexColumnCenter}
 
   gap: ${rem(24)} 0;
+  margin: ${rem(48.5)} 0;
   text-align: center;
   text-transform: uppercase;
 
   ${breakpoint("tablet", `
     flex-direction: row;
     gap: 0 ${rem(32)};
+  `)}
+
+  ${breakpoint("desktop", `
+    margin: 0 0 0 ${fluid(32, 6.6, 102)};
   `)}
 `
 

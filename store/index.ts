@@ -3,6 +3,7 @@ import { createContainer } from "react-tracked";
 
 
 export interface OrderState {
+  [key: string]: string,
   "coffee-drinking": string,
   "coffee-type": string,
   "coffee-quantity": string,

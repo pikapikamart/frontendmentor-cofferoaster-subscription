@@ -7,9 +7,7 @@ const Steps = () =>{
 
   return (
     <StyledSteps>
-      <h2>
-        <SrOnly>How it works</SrOnly>
-      </h2>
+      <SrOnly as="h2">How it works</SrOnly>
       <OrderStepsList bgColor="dark" textColor="light"/>
     </StyledSteps>
   );

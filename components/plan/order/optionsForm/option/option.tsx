@@ -1,4 +1,4 @@
-import { Option as OptionShape } from "./optionsData";
+import { Option as OptionShape } from "../optionsData";
 import { useExpansion } from "@/lib/hooks";
 import { 
   StyledOptionButton,
@@ -6,7 +6,7 @@ import {
   StyledOptionRadioWrapper,
   StyledOptionRadio,
   StyledOptionLabel,
-  StyledOptionLabelHeading } from "./optionsForm.styled";
+  StyledOptionLabelHeading } from "./option.styled";
 import { SrOnly } from "@/styled/shared/helpers";
 import { 
   useSetState, 
@@ -17,7 +17,7 @@ interface Option {
   data: OptionShape
 }
 
-export const Option = ({data}: Option) =>{
+const Option = ({data}: Option) =>{
   const { isExpanded, handleExpansion } = useExpansion();
   const setCoffeeChoice = useSetState();
   const coffeeChoice = useTrackedState();
@@ -71,3 +71,6 @@ export const Option = ({data}: Option) =>{
     </li>
   );
 }
+
+
+export default Option;
