@@ -1,15 +1,16 @@
 import styled from "styled-components";
 import { rem, breakpoint } from "@/styled/functions";
-import { Fraunces, Barlow, FlexCenter } from "@/styled/shared/extensions";
+import { Fraunces, Barlow, FlexColumnCenter } from "@/styled/shared/extensions";
 
 
 export const StyledHamburger = styled.button`
-  background: no-repeat center center/100%;
-  background-image: url("/shared/mobile/icon-hamburger.svg");
+  background: url("/shared/mobile/icon-hamburger.svg") no-repeat center center/100%;
   display: block;
   height: ${rem(16)};
+  position: relative;
   transition: background .3s ease;
   width: ${rem(16)};
+  z-index: 10;
 
   &[aria-expanded="true"] {
     background-image: url("/shared/mobile/icon-close.svg");
@@ -22,9 +23,9 @@ export const StyledHamburger = styled.button`
 
 export const StyledNavMenu = styled.nav`
   background-image: linear-gradient(0deg, rgba(254, 252, 247, .5), rgba(254, 252, 247) 60%);
-  inset: ${rem(90)} 0 0 0;
+  inset: 0 0 0 0;
   opacity: 0;
-  padding-top: ${rem(40)};
+  padding-top: ${rem(130)};
   position: fixed;
   transition: opacity .3s ease,
             visibility .3s ease;
@@ -37,25 +38,26 @@ export const StyledNavMenu = styled.nav`
   }
 
   ${breakpoint("tablet", `
-    background-image: none;
-    opacity: 1;
-    padding-top: 0;
-    position: static;
-    visibility: visible;
+    all: revert;
   `)}
 `
 
 export const StyledNavList = styled.ul`
   ${Fraunces}
-  ${FlexCenter}
-
-  color: ${({ theme }) => theme.colors.darkGreyBlue};
-  flex-direction: column;
-  font-weight: 700;
-  font-size: ${({ theme }) => rem(theme.fontSizes.hSizeFive)};
-  gap: ${rem(32)};
+  ${FlexColumnCenter}
 
   ${({ theme }) => `
+    color: ${theme.colors.darkGreyBlue};
+    font-weight: 700;
+    font-size: ${rem(theme.fontSizes.hSizeFive)};
+
+    & li {
+
+      &:not(:last-of-type) {
+        margin-bottom: ${rem(32)}
+      }
+    }
+
     ${breakpoint("tablet", `
       color: ${theme.colors.grey};
       flex-direction: row;
@@ -65,6 +67,13 @@ export const StyledNavList = styled.ul`
       gap: 0 ${rem(32)};
       letter-spacing: 1px;
       text-transform: uppercase;
+
+      & li {
+
+        &:not(:last-of-type) {
+          margin-bottom: 0;
+        }
+      }
     `)}
   `}
 `

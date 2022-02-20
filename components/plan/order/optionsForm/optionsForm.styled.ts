@@ -6,16 +6,23 @@ import {
 
 
 export const StyledOptionsForm = styled.form`
-  
+
   ${breakpoint("desktop", `
     max-width: ${rem(730)};
+    margin-bottom: ${rem(88)};
   `)}
 `
 
 export const StyledOptionList = styled.ol`
   ${FlexWrapCenter}
 
-   & li {
+  margin-bottom: ${fluid(120, 12, 144)};
+
+  & li {
      flex-basis: 100%;
    }
+
+  ${breakpoint("desktop", `
+   margin-bottom: ${rem(88)};
+  `)}
 `

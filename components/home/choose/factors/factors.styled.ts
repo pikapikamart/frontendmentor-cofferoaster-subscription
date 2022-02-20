@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { rem, fluid, breakpoint } from "@/styled/functions";
 import { 
-  FlexCenter,
   FlexColumnCenter } from "@/styled/shared/extensions";
 
 
@@ -14,21 +13,19 @@ export const StyledFactorsList = styled.ul`
   `)}
 
   ${breakpoint("desktop", `
-    align-items: flex-start;
     display: flex;
     justify-content: center;
-    gap: ${rem(30)};
     text-align: center;
   `)}
 `
 
 export const StyledFactor = styled.li`
   ${FlexColumnCenter}
+
   background-color: ${({ theme }) => theme.colors.darkCyan};
   border-radius: ${rem(8)};
-  gap: ${rem(56)} 0;
   min-height: ${rem(382)};
-  max-width: ${fluid(279, 54, 573)};
+  max-width: ${rem(388)};
   margin: 0 auto;
   padding: ${rem(72)} ${rem(12)} 0;
 
@@ -43,7 +40,6 @@ export const StyledFactor = styled.li`
   ${breakpoint("tablet", `
     align-items: center;
     flex-direction: row;
-    gap: 0 ${rem(50)};
     max-width: ${rem(573)};
     min-height: ${rem(180)};
     padding: 0 ${rem(48)} 0 ${rem(70)};
@@ -51,7 +47,6 @@ export const StyledFactor = styled.li`
 
   ${breakpoint("desktop", `
     flex-direction: column;
-    gap: ${rem(56)} 0;
     margin: 0;
     max-width: ${rem(350)};
     min-height: ${rem(382)};
@@ -61,11 +56,15 @@ export const StyledFactor = styled.li`
       margin-bottom: 0;
     }
 
+    &:nth-of-type(2) {
+      margin: 0 ${rem(30)};
+    }
+
     &:last-of-type{
       padding-top: ${rem(83)};
 
       img {
-        margin-bottom: ${rem(11)};
+        margin-bottom: ${rem(67)};
       }
     }
   `)}
@@ -73,15 +72,18 @@ export const StyledFactor = styled.li`
 
 export const StyledFactorImage = styled.img`
   height: ${rem(72)};
+  margin: 0 0 ${rem(56)};
   width: ${rem(72)};
 
   ${breakpoint("tablet", `
     height: ${rem(56)};
+    margin: 0 ${rem(50)} 0 0;
     width: ${rem(56)};
   `)}
 
   ${breakpoint("desktop", `
     height: ${rem(72)};
+    margin: 0 0 ${rem(56)};
     width: ${rem(72)};
   `)}
 `

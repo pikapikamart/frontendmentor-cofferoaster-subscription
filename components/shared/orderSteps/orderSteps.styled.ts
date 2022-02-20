@@ -8,7 +8,6 @@ export const StyledOrderStepList = styled.ol`
   ${breakpoint("tablet", `
     ${FlexRowBetween}
 
-    gap: 0 ${rem(10)};
     margin: ${fluid(40, 6, 80)} 0 ${fluid(44, 7, 64)};
     position: relative;
 
@@ -45,18 +44,18 @@ export const StyledOrderStep = styled.li<OrderStep>`
       }
 
       &:first-of-type {
-        ${bgColor==="dark" && `
-          background-image: linear-gradient(90deg, ${theme.colors.darkBlue} 0%, ${theme.colors.darkBlue} 15px, transparent 15px, transparent 100%);
-        `}
+          background-image: ${bgColor==="dark"? "linear-gradient(90deg, ${theme.colors.darkBlue} 0%, ${theme.colors.darkBlue} 15px, transparent 15px, transparent 100%)" : "none"};
+      }
+
+      &:nth-of-type(2) {
+        margin: 0 ${rem(10)};
       }
 
       &:last-of-type {
         background-color: ${bgColor==="light"? "#FFFFFF" : "transparent"};
         z-index: 10;
 
-        ${bgColor==="dark" && `
-          background-image: linear-gradient(90deg, transparent 0%, transparent 15px, ${theme.colors.darkBlue} 15px, ${theme.colors.darkBlue} 100%);
-        `}
+        background-image: ${bgColor==="dark"? "linear-gradient(90deg, transparent 0%, transparent 15px, ${theme.colors.darkBlue} 15px, ${theme.colors.darkBlue} 100%)" : "none"};
       }
 
       &::before {
@@ -71,12 +70,11 @@ export const StyledOrderStep = styled.li<OrderStep>`
       }
     `)}
   `}
-
-  
 `
 
 export const StyledOrderStepNumber = styled.p`
   ${Fraunces}
+  
   line-height: 1;
 
   ${({ theme }) => `

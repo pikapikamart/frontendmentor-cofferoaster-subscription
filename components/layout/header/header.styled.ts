@@ -11,5 +11,7 @@ export const StyledHeader = styled.header`
 
 export const StyledHeaderLogo = styled.img`
   max-height: ${rem(26)};
+  position: relative;
   width: ${fluid(163, 32, 236)};
+  z-index: 10;
 `

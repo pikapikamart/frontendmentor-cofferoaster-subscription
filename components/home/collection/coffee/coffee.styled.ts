@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import { rem, breakpoint } from "@/styled/functions";
 import { 
-  FlexCenter, 
+  FlexWrapCenter, 
   FlexColumnCenter } from "@/styled/shared/extensions";
 import { DarkText } from "@/styled/shared/text.styled";
 
 
 export const StyledCoffeesList = styled.ul`
-  ${FlexCenter}
+  ${FlexWrapCenter}
+
   align-items: flex-start;
   color: ${({ theme }) => theme.colors.darkGreyBlue};
-  flex-wrap: wrap;
 
   ${breakpoint("tablet", `
     gap: 0 ${rem(36)};
@@ -27,7 +27,6 @@ export const StyledCoffeesList = styled.ul`
 
 export const StyledCoffee = styled.li`
   ${FlexColumnCenter}
-  gap: ${rem(24)};
 
   &:not(:last-of-type) {
     margin-bottom: ${rem(48)};
@@ -39,12 +38,23 @@ export const StyledCoffee = styled.li`
 
   ${breakpoint("desktop", `
     flex-direction: column;
-    gap: ${rem(71.55)} 0;
     max-width: ${rem(256)};
     
     &:not(:last-of-type) {
       margin-bottom: 0;
     }
+  `)}
+`
+
+export const StyledCoffeeImage = styled.img`
+  margin-bottom: ${rem(24)};
+
+  ${breakpoint("tablet", `
+    margin-bottom: 0;
+  `)}
+
+  ${breakpoint("desktop", `
+    margin-bottom: ${rem(71.55)};
   `)}
 `
 
