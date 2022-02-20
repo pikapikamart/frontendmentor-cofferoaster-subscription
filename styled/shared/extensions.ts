@@ -27,6 +27,12 @@ export const FlexRowBetween = css`
   justify-content: space-between;
 `
 
+export const FlexWrapCenter = css`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`
+
 export const HeroContainer = css`
   ${FlexCenter}
   

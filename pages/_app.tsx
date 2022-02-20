@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app'
 import { Layout } from "@/page-components/layout";
 import { ThemeProvider } from 'styled-components';
 import { Theme } from "@/styled/theme";
+import { Provider } from '../store';
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -9,7 +10,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={Theme}>
       <Layout>
-        <Component {...pageProps} />
+        <Provider>
+          <Component {...pageProps} />
+        </Provider>
       </Layout>
     </ThemeProvider>
   )

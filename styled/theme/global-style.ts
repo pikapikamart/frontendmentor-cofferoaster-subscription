@@ -56,6 +56,7 @@ const GlobalStyle = createGlobalStyle`
   input,
   button,
   textarea {
+    background: none;
     border: none;
     font: inherit;
     outline: none;
