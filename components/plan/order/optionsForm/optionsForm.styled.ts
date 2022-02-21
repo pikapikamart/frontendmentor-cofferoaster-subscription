@@ -1,15 +1,22 @@
 import styled from "styled-components";
 import { rem, fluid, breakpoint } from "@/styled/functions";
-import { 
-  Fraunces, 
-  FlexWrapCenter } from "@/styled/shared/extensions";
+import { FlexWrapCenter } from "@/styled/shared/extensions";
+import { StyledCreatePlan } from "@/components/shared/createPlan/createPlan.styled";
 
 
 export const StyledOptionsForm = styled.form`
 
+  & ${StyledCreatePlan} {
+    margin: 0 auto;
+  }
+
   ${breakpoint("desktop", `
     max-width: ${rem(730)};
     margin-bottom: ${rem(88)};
+
+    & ${StyledCreatePlan} {
+      margin-left: auto;
+    }
   `)}
 `
 

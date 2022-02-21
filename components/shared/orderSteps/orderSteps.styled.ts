@@ -44,7 +44,7 @@ export const StyledOrderStep = styled.li<OrderStep>`
       }
 
       &:first-of-type {
-          background-image: ${bgColor==="dark"? "linear-gradient(90deg, ${theme.colors.darkBlue} 0%, ${theme.colors.darkBlue} 15px, transparent 15px, transparent 100%)" : "none"};
+          background-image: ${bgColor==="dark"? `linear-gradient(90deg, ${theme.colors.darkBlue} 0%, ${theme.colors.darkBlue} 15px, transparent 15px, transparent 100%)` : "none"};
       }
 
       &:nth-of-type(2) {
@@ -55,7 +55,7 @@ export const StyledOrderStep = styled.li<OrderStep>`
         background-color: ${bgColor==="light"? "#FFFFFF" : "transparent"};
         z-index: 10;
 
-        background-image: ${bgColor==="dark"? "linear-gradient(90deg, transparent 0%, transparent 15px, ${theme.colors.darkBlue} 15px, ${theme.colors.darkBlue} 100%)" : "none"};
+        background-image: ${bgColor==="dark"? `linear-gradient(90deg, transparent 0%, transparent 15px, ${theme.colors.darkBlue} 15px, ${theme.colors.darkBlue} 100%)` : "none"};
       }
 
       &::before {

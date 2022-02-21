@@ -65,7 +65,7 @@ export const OptionsData: Option[] = [
     id: "order-quantity",
     question: "How much would you like?",
     legend: "quantity of coffee order",
-    radioGroup: "coffee-quantitiy",
+    radioGroup: "coffee-quantity",
     choices: [
       {
         id: "250g",

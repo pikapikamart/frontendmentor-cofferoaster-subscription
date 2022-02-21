@@ -7,15 +7,23 @@ import { StyledHero } from "@/components/home/hero/hero.styled";
 export const StyledCreatePlan = styled.a`
   ${Fraunces}
   ${FlexCenter}
+
+  border-radius: ${rem(6)};
+  font-size: ${rem(18)};
+  font-weight: 900;
+  height: ${rem(56)};
+  line-height: 1.34;
+  width: ${rem(218)};
+
   ${({ theme }) => `
     background-color: ${theme.colors.darkCyan};
     color: ${theme.colors.lightCream};
   `}
-  border-radius: ${rem(6)};
-  font-size: ${rem(18)};
-  height: ${rem(56)};
-  line-height: 1.34;
-  width: ${rem(218)};
+
+  &[type="submit"][disabled] {
+    background-color: #b8b8b8;
+    cursor: not-allowed;
+  }
 
   ${StyledHero} & {
     margin-top: ${fluid(16, 2, 24)};

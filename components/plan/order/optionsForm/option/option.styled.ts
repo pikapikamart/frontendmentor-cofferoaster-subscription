@@ -48,11 +48,9 @@ export const StyledOptionButton = styled.button`
 `
 
 export const StyledOptionField = styled.fieldset`
-  ${FlexWrapCenter}
-
   border: none;
-  gap: ${rem(16)};
-  margin: 0 0 ${rem(110)};
+  margin: 0 auto ${rem(110)};
+  max-width: ${rem(328)};
   padding: 0;
 
   &:focus-within {
@@ -61,18 +59,31 @@ export const StyledOptionField = styled.fieldset`
   }
 
   ${breakpoint("tablet", `
+    display: flex;
     flex-wrap: nowrap;
     margin-bottom: ${rem(100)};
+    max-width: 100%;
   `)}
 `
 
 export const StyledOptionRadioWrapper = styled.div`
   flex: 1 1 100%;
-  max-width: ${rem(328)};
   position: relative;
+
+  &:not(:last-of-type) {
+    margin-bottom: ${rem(16)};
+  }
 
   ${breakpoint("tablet", `
     min-height: ${rem(250)};
+
+    &:not(:last-of-type) {
+      margin-bottom: 0;
+    }
+
+    &:nth-of-type(2) {
+      margin: 0 ${rem(10)};
+    }
   `)}
 `
 
@@ -95,7 +106,6 @@ export const StyledOptionLabel = styled.label`
   color: ${({ theme }) => theme.colors.darkGreyBlue};
   display: flex;
   flex-direction: column;
-  gap: ${fluid(8, 2, 24)};
   height: 100%;
   line-height: 1.625;
   padding: ${rem(24)};
@@ -112,6 +122,7 @@ export const StyledOptionLabelHeading = styled.span`
 
   font-weight: 900;
   line-height: 1.3333;
+  margin-bottom: ${fluid(8, 2, 24)};
 
   ${({ theme }) =>`
     font-size: ${rem(theme.fontSizes.hSizeFive)};
