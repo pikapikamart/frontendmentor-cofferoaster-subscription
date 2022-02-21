@@ -20,11 +20,6 @@ export const StyledCreatePlan = styled.a`
     color: ${theme.colors.lightCream};
   `}
 
-  &[type="submit"][disabled] {
-    background-color: #b8b8b8;
-    cursor: not-allowed;
-  }
-
   ${StyledHero} & {
     margin-top: ${fluid(16, 2, 24)};
   }

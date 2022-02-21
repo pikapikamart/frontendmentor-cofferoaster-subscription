@@ -15,7 +15,7 @@ export const StyledOptionsForm = styled.form`
     margin-bottom: ${rem(88)};
 
     & ${StyledCreatePlan} {
-      margin-left: auto;
+      margin: 0 0 0 auto;
     }
   `)}
 `

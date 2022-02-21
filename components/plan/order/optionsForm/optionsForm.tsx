@@ -1,15 +1,18 @@
+import { useState } from "react";
 import { 
   StyledOptionsForm,
   StyledOptionList } from "./optionsForm.styled";
 import { OptionsData } from "./optionsData";
 import { Option } from "./option";
-import { Summary } from "../summary";
+import { Summary } from "./summary";
 import { StyledCreatePlan } from "@/components/shared/createPlan/createPlan.styled";
 import { useTrackedState } from "@/store/index";
+import { Checkout } from "./checkout";
 
 
 const OptionsForm = () =>{
   const coffeeChoices = useTrackedState();
+  const [ showModal, setShowModal ] = useState(false);
 
   const checkFormValidity = () =>{
 
@@ -24,10 +27,14 @@ const OptionsForm = () =>{
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) =>{
     event.preventDefault();
+  }
 
+  const handleShowModal = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
     if ( !checkFormValidity()) {
       return;
     }
+
+    setShowModal(true);
   }
 
   const renderSelections = () => {
@@ -45,10 +52,12 @@ const OptionsForm = () =>{
       </StyledOptionList>
       <Summary /> 
       <StyledCreatePlan  as="button" 
-        type="submit"
-        disabled={!checkFormValidity()}>
+        type="button"
+        disabled={!checkFormValidity()}
+        onClick={handleShowModal}>
         Create my plan!
       </StyledCreatePlan>
+      {showModal && <Checkout hideModal={setShowModal}/>}
     </StyledOptionsForm>
   );
 }

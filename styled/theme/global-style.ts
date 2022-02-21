@@ -84,6 +84,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0 ${fluid(24, 5.8, 80)} ${fluid(72, 9, 88)};
   }
 
+  body.no-scroll {
+    overflow: hidden;
+  }
+
   h1,
   h2,
   h3,

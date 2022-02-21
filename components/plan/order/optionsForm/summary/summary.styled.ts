@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { rem, fluid, breakpoint } from "@/styled/functions";
 import { Fraunces } from "@/styled/shared/extensions";
+import { StyledCreatePlan } from "@/components/shared/createPlan/createPlan.styled";
 
 
 export const StyledSummary = styled.div`
@@ -8,6 +9,14 @@ export const StyledSummary = styled.div`
   border-radius: ${rem(10)};
   margin-bottom: ${rem(56)};
   padding: ${rem(32)} ${rem(24)};
+
+  & + ${StyledCreatePlan} {
+    
+    &[type="button"][disabled] {
+      background-color: #b8b8b8;
+      cursor: not-allowed;
+    }
+  }
 
   ${breakpoint("tablet", `
     margin-bottom: ${rem(40)};

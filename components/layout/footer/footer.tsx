@@ -4,7 +4,7 @@ import {
   StyledNavList,
   StyledSocialMedias } from "./footer.styled";
 import { useRouter } from "next/router";
-import { renderNavLinks } from "@/components/shared/functions";
+import { Navlinks } from "@/components/shared/navlinks";
 import { socialMedias } from "@/components/shared/data/socialMedias";
 import { SrOnly } from "@/styled/shared/helpers";
 
@@ -34,7 +34,7 @@ const Footer = () =>{
       </div>
       <nav>
         <StyledNavList>
-          {renderNavLinks("footer", currentPath)}
+          <Navlinks navLabel="footer" currentPath={currentPath}/>
         </StyledNavList>
       </nav>
       <StyledSocialMedias>
