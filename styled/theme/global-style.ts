@@ -86,6 +86,7 @@ const GlobalStyle = createGlobalStyle`
 
   body.no-scroll {
     overflow: hidden;
+    outline: none;
   }
 
   h1,

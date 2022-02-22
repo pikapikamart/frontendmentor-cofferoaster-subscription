@@ -6,7 +6,7 @@ import { navLinksData } from "./navlinksData";
 interface NavlinkShape {
   navLabel: string,
   currentPath: string,
-  lastRef?: MutableRefObject<HTMLAnchorElement | null>
+  lastRef?: MutableRefObject<HTMLElement | null>
 }
 
 const Navlinks = ({ navLabel, currentPath, lastRef }: NavlinkShape) =>{
