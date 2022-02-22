@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
-import { rem } from "@/styled/functions";
+import { 
+  rem,
+  breakpoint } from "@/styled/functions";
 import { Fraunces } from "@/styled/shared/extensions";
 
 
@@ -8,7 +10,16 @@ export const StyledJumplinks = styled.ol`
   max-width: ${rem(255)};
   margin-right: ${rem(32)};
   position: sticky;
-  top: ${rem(112)};
+  top: ${rem(136)};
+`
+
+export const StyledJumpLinkText = styled.a`
+  color: ${({ theme }) => theme.colors.darkGreyBlue};
+  margin-left: ${rem(28)};
+
+  &[data-focus="true"] {
+
+  }
 `
 
 interface JumpLink {
@@ -48,14 +59,21 @@ export const StyledJumplink = styled.li<JumpLink>`
     &:first-of-type {
       color: ${theme.colors.darkCyan};
     }
+
+    ${breakpoint("desktop", `
+      transition: opacity .3s ease;
+
+      &:hover {
+        opacity: .6;
+
+        & ${StyledJumpLinkText} {
+          color: ${theme.colors.darkGreyBlue};
+        }
+      }
+
+      & ${StyledJumpLinkText} {
+        transition: color .3s ease;
+      }
+    `)}
   `}
 ` 
-
-export const SyledJumpLinkText = styled.a`
-  color: ${({ theme }) => theme.colors.darkGreyBlue};
-  margin-left: ${rem(28)};
-
-  &[data-focus="true"] {
-
-  }
-`

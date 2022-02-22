@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import React, { 
+  useEffect,
+  memo } from "react";
 import { 
   useExpansion,
   useTrapFocus } from "@/lib/hooks";
@@ -55,4 +57,4 @@ const Navbar = () =>{
   )
 };
 
-export default Navbar;
+export default memo(Navbar);

@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import { 
+  fluid, 
+  breakpoint } from "@/styled/functions";
 import { HeroContainer } from "@/styled/shared/extensions";
-import { fluid, breakpoint } from "@/styled/functions";
 
 
 export const StyledHero = styled.div`

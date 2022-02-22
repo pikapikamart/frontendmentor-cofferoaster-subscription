@@ -10,7 +10,7 @@ import {
 import { SrOnly } from "@/styled/shared/helpers";
 import { 
   useSetState, 
-  useTrackedState} from "@/store/index";
+  useTrackedState} from "@/store/tracked";
 
 
 interface Option {

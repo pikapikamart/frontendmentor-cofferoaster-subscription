@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import { rem, fluid, breakpoint } from "@/styled/functions";
+import { 
+  rem, 
+  fluid, 
+  breakpoint } from "@/styled/functions";
 import { 
   Fraunces,
-  FlexCenter,
   FlexRowBetween } from "@/styled/shared/extensions";
 import { 
   StyledSummary,
@@ -12,18 +14,18 @@ import { StyledCreatePlan } from "@/components/shared/createPlan/createPlan.styl
 
 
 export const StyledCheckoutContainer = styled.div`
-  ${FlexCenter}
 
   background-color: rgba(0, 0, 0, .4);
   inset: 0;
   min-height: 100vh;
-  padding: ${rem(35)} ${rem(24)};
+  overflow-y: scroll;
+  padding: ${rem(20)} ${rem(24)};
   position: fixed;
   width: 100%;
   z-index: 50;
 
   ${breakpoint("tablet", `
-    padding: ${rem(114)};
+    padding: ${rem(64)};
   `)}
 `
 
@@ -31,8 +33,9 @@ export const StyledCheckout = styled.div`
   background-color: #FFFFFF;
   border-radius: ${rem(8)};
   max-width: ${rem(540)};
+  margin: ${rem(16)} auto;
   overflow: hidden;
-  
+  outline: none;
 
   ${StyledSummaryInfo} {
     color: ${({ theme }) => theme.colors.grey};
@@ -87,6 +90,7 @@ export const StyledCheckoutPriceContainer = styled.div`
 `
 
 export const StyledCheckoutPrice = styled.p`
+  display: none;
 
   ${({ theme }) =>`
 
@@ -94,6 +98,7 @@ export const StyledCheckoutPrice = styled.p`
       ${Fraunces}
 
       color: ${theme.colors.darkGreyBlue};
+      display: block;
       font-size: ${rem(theme.fontSizes.hSizeFour)};
       line-height: 1.125;
       font-weight: 900;
@@ -109,4 +114,12 @@ export const StyledCheckoutGoBack = styled.button`
   font-weight: 900;
   margin-top: ${rem(20)};
   padding: ${rem(10)} ${rem(14)};
+
+  ${breakpoint("desktop", `
+    transition: background-color .3s ease;
+
+    &:hover {
+      background-color: #2C343E;
+    }
+  `)}
 `

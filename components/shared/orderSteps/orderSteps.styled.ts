@@ -1,6 +1,11 @@
 import styled from "styled-components";
-import { rem, fluid, breakpoint } from '@/styled/functions';
-import { Fraunces, FlexRowBetween } from "@/styled/shared/extensions";
+import { 
+  rem, 
+  fluid, 
+  breakpoint } from '@/styled/functions';
+import { 
+  Fraunces, 
+  FlexRowBetween } from "@/styled/shared/extensions";
 
 
 export const StyledOrderStepList = styled.ol`

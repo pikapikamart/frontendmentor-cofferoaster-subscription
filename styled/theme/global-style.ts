@@ -81,7 +81,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     max-width: ${rem(1600)};
     margin: 0 auto;
-    padding: 0 ${fluid(24, 5.8, 80)} ${fluid(72, 9, 88)};
+    padding-bottom: ${fluid(72, 9, 88)}; 
   }
 
   body.no-scroll {

@@ -14,6 +14,7 @@ import {
 import { DarkText } from "@/styled/shared/text.styled";
 import { StyledCreatePlan } from "@/components/shared/createPlan/createPlan.styled";
 import { Summary } from "../summary";
+import { useTrapFocus } from "@/lib/hooks";
 
 
 interface CheckoutShape {
@@ -22,6 +23,7 @@ interface CheckoutShape {
 
 const Checkout = ({hideModal}: CheckoutShape) =>{
   const modalRef = useRef<HTMLDivElement | null>(null);
+  const [ firstControl, lastControl, registerTrap ] = useTrapFocus<HTMLButtonElement, HTMLButtonElement>();
 
   const handleHideModal = () => {
     requestAnimationFrame(() =>{
@@ -41,19 +43,23 @@ const Checkout = ({hideModal}: CheckoutShape) =>{
     <StyledCheckoutContainer >
       <StyledCheckout tabIndex={-1}
         onBlur={handleHideModal}
-        ref={modalRef}>
+        ref={modalRef}
+        onKeyDown={registerTrap}>
         <StyledCheckoutHeading>Order Summary</StyledCheckoutHeading>
         <StyledCheckoutBlock>
           <Summary />
           <DarkText>Is this correct? You can proceed to checkout or go back to plan selection if something is off. Subscription discount codes can also be redeemed at the checkout. </DarkText>
           <StyledCheckoutPriceContainer>
             <StyledCheckoutPrice>$14.00/mo</StyledCheckoutPrice>
-            <StyledCreatePlan as="button" type="submit">
+            <StyledCreatePlan as="button" 
+            type="submit"
+            ref={firstControl}>
               Checkout {` `}
               <span> {`  - $14.00/mo`}</span>
             </StyledCreatePlan>
           </StyledCheckoutPriceContainer>
-          <StyledCheckoutGoBack>Go back</StyledCheckoutGoBack>
+          <StyledCheckoutGoBack ref={lastControl}
+            onClick={() => hideModal(false)}>Go back</StyledCheckoutGoBack>
         </StyledCheckoutBlock>
       </StyledCheckout>
     </StyledCheckoutContainer>

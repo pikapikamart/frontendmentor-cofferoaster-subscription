@@ -1,8 +1,8 @@
 import type { AppProps } from 'next/app'
-import { Layout } from "@/page-components/layout";
 import { ThemeProvider } from 'styled-components';
+import { Layout } from "@/page-components/layout";
 import { Theme } from "@/styled/theme";
-import { Provider } from '../store';
+import { Provider } from '@/store/tracked';
 
 
 function MyApp({ Component, pageProps }: AppProps) {

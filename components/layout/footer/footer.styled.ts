@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import { rem, fluid, breakpoint } from "@/styled/functions";
+import { 
+  rem, 
+  fluid, 
+  breakpoint } from "@/styled/functions";
 import { FlexColumnCenter } from "@/styled/shared/extensions";
 
 
@@ -28,18 +31,38 @@ export const StyledFooterLogo = styled.img`
 export const StyledNavList = styled.ul`
   ${FlexColumnCenter}
 
-  gap: ${rem(24)} 0;
   margin: ${rem(48.5)} 0;
   text-align: center;
   text-transform: uppercase;
 
+  & li {
+
+    &:nth-of-type(2) {
+      margin: ${rem(24)} 0;
+    }
+  }
+
   ${breakpoint("tablet", `
     flex-direction: row;
-    gap: 0 ${rem(32)};
+
+    & li {
+
+      &:nth-of-type(2) {
+        margin: 0 ${rem(32)};
+      }
+    }
   `)}
 
   ${breakpoint("desktop", `
     margin: 0 0 0 ${fluid(32, 6.6, 102)};
+
+    li {
+      transition: color .3s linear;
+
+      &:hover {
+        color: #FEFCF7;
+      }
+    }
   `)}
 `
 

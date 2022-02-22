@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import { rem, fluid, breakpoint } from "@/styled/functions";
+import { 
+  rem, 
+  fluid, 
+  breakpoint } from "@/styled/functions";
 import { FlexWrapCenter } from "@/styled/shared/extensions";
 import { StyledCreatePlan } from "@/components/shared/createPlan/createPlan.styled";
 

@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { 
+  useState,
+  useEffect } from "react";
 import { 
   StyledOptionsForm,
   StyledOptionList } from "./optionsForm.styled";
@@ -6,7 +8,7 @@ import { OptionsData } from "./optionsData";
 import { Option } from "./option";
 import { Summary } from "./summary";
 import { StyledCreatePlan } from "@/components/shared/createPlan/createPlan.styled";
-import { useTrackedState } from "@/store/index";
+import { useTrackedState } from "@/store/tracked";
 import { Checkout } from "./checkout";
 
 
@@ -44,6 +46,16 @@ const OptionsForm = () =>{
 
     return selections;
   }
+
+  useEffect(() =>{
+    if ( showModal ) {
+      document.body.classList.add("no-scroll");
+    }
+
+    else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [ showModal ])
 
   return (
     <StyledOptionsForm onSubmit={handleFormSubmit}>

@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import { rem, fluid, breakpoint } from "@/styled/functions";
+import { 
+  rem, 
+  fluid, 
+  breakpoint } from "@/styled/functions";
 import { StyledOrderStepList } from "@/components/shared/orderSteps/orderSteps.styled";
 
 

@@ -1,6 +1,11 @@
 import styled from "styled-components";
-import { rem, breakpoint } from "@/styled/functions";
-import { Fraunces, Barlow, FlexColumnCenter } from "@/styled/shared/extensions";
+import { 
+  rem, 
+  breakpoint } from "@/styled/functions";
+import { 
+  Fraunces, 
+  Barlow, 
+  FlexColumnCenter } from "@/styled/shared/extensions";
 
 
 export const StyledHamburger = styled.button`
@@ -64,16 +69,33 @@ export const StyledNavList = styled.ul`
       ${Barlow}
       font-size: ${rem(theme.fontSizes.navSizeOne)};
       font-weight: 700;
-      gap: 0 ${rem(32)};
       letter-spacing: 1px;
       text-transform: uppercase;
 
       & li {
+
+        &:nth-of-type(2) {
+          margin: 0 ${rem(32)};
+        }
 
         &:not(:last-of-type) {
           margin-bottom: 0;
         }
       }
     `)}
+
+    ${breakpoint("desktop", `
+      
+      & li {
+        transition: color .3s linear;
+
+        &:hover {
+          color: ${theme.colors.darkGreyBlue};
+        }
+      }
+    `)}
+
   `}
+
+  
 `

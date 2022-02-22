@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import { fluid, breakpoint } from "@/styled/functions";
+import { 
+  fluid, 
+  breakpoint } from "@/styled/functions";
 import { HeroContainer } from "@/styled/shared/extensions";
 
 

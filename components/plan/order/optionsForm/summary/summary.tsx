@@ -3,7 +3,7 @@ import {
   StyledSummaryHeading,
   StyledSummaryInfo,
   StyledSummaryChoices } from "./summary.styled"
-import { useTrackedState } from "@/store/index";
+import { useTrackedState } from "@/store/tracked";
 
 
 const Summary = () =>{

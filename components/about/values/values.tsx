@@ -6,7 +6,9 @@ import {
   StyledQualityText } from "./values.styled";
 import { Relative } from "@/styled/shared/helpers";
 import { Heading2 } from "@/styled/shared/text.styled";
-import { DarkText, WhiteText } from "@/styled/shared/text.styled";
+import { 
+  DarkText, 
+  WhiteText } from "@/styled/shared/text.styled";
 
 
 const Values = () =>{

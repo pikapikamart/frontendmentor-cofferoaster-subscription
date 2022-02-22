@@ -1,6 +1,11 @@
 import styled from "styled-components";
-import { rem, fluid } from "@/styled/functions";
-import { Fraunces, FlexCenter } from "@/styled/shared/extensions";
+import { 
+  rem, 
+  fluid,
+  breakpoint } from "@/styled/functions";
+import { 
+  Fraunces, 
+  FlexCenter } from "@/styled/shared/extensions";
 import { StyledHero } from "@/components/home/hero/hero.styled";
 
 
@@ -23,4 +28,12 @@ export const StyledCreatePlan = styled.a`
   ${StyledHero} & {
     margin-top: ${fluid(16, 2, 24)};
   }
+
+  ${breakpoint("desktop", `
+    transition: background-color .3s ease;
+
+    &:hover {
+      background-color: #66D2CF;
+    }
+  `)}
 `

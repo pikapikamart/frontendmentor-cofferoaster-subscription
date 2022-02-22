@@ -1,13 +1,49 @@
 import { 
+  useState,
+  useEffect } from "react";
+import { 
   StyledHeader, 
   StyledHeaderLogo } from "./header.styled";
 import { Navbar } from "./navbar";
 
 
 const Header = () =>{
+  const [ showHeaderSticky, setShowHeaderSticky ] = useState(false);
+  const [ hideHeaderSticky, setHideHeaderSticky ] = useState(false);
+  const [ windowHeight, setWindowHeight ] = useState(0);
+
+  const handleHeightResize = () =>{
+    setWindowHeight(window.scrollY);
+  }
+
+  useEffect(() =>{
+    if ( hideHeaderSticky ) {
+      const stickyTimeout = setTimeout(() => {
+        setHideHeaderSticky(false);
+        setShowHeaderSticky(false);
+      }, 500);
+
+      return () => clearTimeout(stickyTimeout);
+    }
+  }, [ hideHeaderSticky ]);
+
+  useEffect(() =>{
+    if ( !hideHeaderSticky && windowHeight > 650 ) {
+      setShowHeaderSticky(true);
+    }
+
+    else if ( showHeaderSticky && windowHeight <= 650 ) {
+      setHideHeaderSticky(true);
+    }
+  }, [ windowHeight ]);
+
+  useEffect(() =>{
+    window.addEventListener("scroll", handleHeightResize);
+  }, [])
 
   return (
-    <StyledHeader>
+    <StyledHeader className={`${hideHeaderSticky? "scroll-in scroll-out" : 
+                              showHeaderSticky? "scroll-in" : ""}`}>
       <div>
         <StyledHeaderLogo 
           src="/shared/logo.svg"

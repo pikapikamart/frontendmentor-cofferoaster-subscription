@@ -1,7 +1,7 @@
 import { 
   StyledJumplinks,
   StyledJumplink,
-  SyledJumpLinkText } from "./jumplinks.styled";
+  StyledJumpLinkText } from "./jumplinks.styled";
 import { JumplinksData } from "./jumplinksData";
 import { SrOnly } from "@/styled/shared/helpers";
 import { useState } from "react";
@@ -21,10 +21,10 @@ const JumpLinks = () =>{
         <span aria-hidden="true">0</span>
         {index+1}
         <SrOnly>!</SrOnly>
-        <SyledJumpLinkText href={`#${link.linkTo}`}
+        <StyledJumpLinkText href={`#${link.linkTo}`}
           onClick={handleToggleLink}>
           {link.name}
-        </SyledJumpLinkText>
+        </StyledJumpLinkText>
       </StyledJumplink>
     ));
 

@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { rem, fluid, breakpoint } from "@/styled/functions";
 import { 
-  Fraunces,
-  FlexWrapCenter } from "@/styled/shared/extensions";
+  rem, 
+  fluid, 
+  breakpoint } from "@/styled/functions";
+import { Fraunces } from "@/styled/shared/extensions";
 
 
 export const StyledOptionButton = styled.button`
@@ -29,7 +30,7 @@ export const StyledOptionButton = styled.button`
     width: ${rem(18)};
   }
 
-  &:focus-within {
+  &:focus-within[aria-expanded=true] {
     opacity: 1;
   }
 
@@ -115,6 +116,15 @@ export const StyledOptionLabel = styled.label`
   ${breakpoint("tablet", `
     padding: ${rem(32)} ${rem(28)};
   `)}
+
+  ${({ theme }) =>`
+    ${breakpoint("desktop",`
+
+      &:hover {
+        background-color: ${theme.colors.paleOrange};
+      }
+    `)}
+  `}
 `
 
 export const StyledOptionLabelHeading = styled.span`

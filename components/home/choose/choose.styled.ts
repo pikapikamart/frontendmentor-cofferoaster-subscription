@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import { rem, fluid, breakpoint } from "@/styled/functions";
+import { 
+  rem, 
+  fluid, 
+  breakpoint } from "@/styled/functions";
 import { WhiteText } from "@/styled/shared/text.styled";
 
 

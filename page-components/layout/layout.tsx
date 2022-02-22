@@ -2,6 +2,7 @@ import Head from "next/head";
 import { ReactNode } from "react";
 import { GlobalStyles } from "@/styled/theme";
 import { Header } from "@/components/layout/header";
+import { MainWrapper } from "./layout.styled";
 import { Footer } from "@/components/layout/footer";
 
 
@@ -26,8 +27,10 @@ const Layout = ({ children } : LayoutChildren) =>{
       </Head>
       <GlobalStyles />
       <Header />
-      { children }
-      <Footer />
+      <MainWrapper>
+        { children }
+        <Footer />
+      </MainWrapper>
     </>
   );
 }

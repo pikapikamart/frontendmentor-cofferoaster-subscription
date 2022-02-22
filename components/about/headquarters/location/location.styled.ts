@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import { rem, breakpoint } from "@/styled/functions";
+import { 
+  rem, 
+  breakpoint } from "@/styled/functions";
 
 
 export const StyledLocationList = styled.ul`
