@@ -1,6 +1,8 @@
-import { MutableRefObject } from "react";
-import Link from "next/link";
+import { 
+  memo, 
+  MutableRefObject } from "react";
 import { navLinksData } from "./navlinksData";
+import { NoScrollLink } from "../utilities";
 
 
 interface NavlinkShape {
@@ -15,7 +17,7 @@ const Navlinks = ({ navLabel, currentPath, lastRef }: NavlinkShape) =>{
     const length = navLinksData.length;
     const links = navLinksData.map(( link, index ) =>(
       <li key={navLabel + link.id}>
-        <Link href={link.link}>
+        <NoScrollLink href={link.link}>
           <a aria-current={currentPath===link.link? "page" : undefined}
             ref={element => {
               if ( lastRef && index===length-1) {
@@ -24,7 +26,7 @@ const Navlinks = ({ navLabel, currentPath, lastRef }: NavlinkShape) =>{
             }}>
             {link.name}
           </a>
-        </Link>
+        </NoScrollLink>
       </li>
     ))
 
@@ -39,4 +41,4 @@ const Navlinks = ({ navLabel, currentPath, lastRef }: NavlinkShape) =>{
 }
 
 
-export default Navlinks;
+export default memo(Navlinks);

@@ -12,10 +12,6 @@ const Header = () =>{
   const [ hideHeaderSticky, setHideHeaderSticky ] = useState(false);
   const [ windowHeight, setWindowHeight ] = useState(0);
 
-  const handleHeightResize = () =>{
-    setWindowHeight(window.scrollY);
-  }
-
   useEffect(() =>{
     if ( hideHeaderSticky ) {
       const stickyTimeout = setTimeout(() => {
@@ -38,6 +34,10 @@ const Header = () =>{
   }, [ windowHeight ]);
 
   useEffect(() =>{
+    const handleHeightResize = () =>{
+      setWindowHeight(window.scrollY);
+    }
+
     window.addEventListener("scroll", handleHeightResize);
   }, [])
 

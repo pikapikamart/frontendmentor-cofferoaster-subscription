@@ -21,7 +21,8 @@
       "@/lib/*" : ["lib/*"],
       "@/public/*": ["public/*"],
       "@/styled/*": ["styled/*"],
-      "@/store/*": ["store/*"]
+      "@/store/*": ["store/*"],
+      "@/motion" : ["motion/"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

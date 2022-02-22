@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { fluid } from "../functions";
+import { motion } from "framer-motion";
 
 
 export const WhiteText = styled.p`
@@ -12,13 +13,20 @@ export const DarkText = styled.p`
   font-size: ${fluid(15, 1.3, 16)};
 `
 
-export const HeroHeading = styled.h1`
+export const HeroHeading = styled(motion.h1)`
   line-height: 1;
   max-width: 11ch;
 
   ${({ theme }) => `
     font-size: ${fluid(theme.fontSizes.hSizeThree, 6.4, theme.fontSizes.hSizeTwo)};
   `}
+`
+
+export const HeroText = styled.p`
+  font-weight: 400;
+  font-size: ${fluid(15, 1.3, 16)};
+  max-width: 47ch;
+  opacity: .8;
 `
 
 export const Heading2 = styled.h2`
@@ -30,9 +38,3 @@ export const Heading2 = styled.h2`
   `}
 `
 
-export const HeroText = styled.p`
-  font-weight: 400;
-  font-size: ${fluid(15, 1.3, 16)};
-  max-width: 47ch;
-  opacity: .8;
-`

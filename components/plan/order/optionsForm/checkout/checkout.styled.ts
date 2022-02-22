@@ -22,7 +22,7 @@ export const StyledCheckoutContainer = styled.div`
   padding: ${rem(20)} ${rem(24)};
   position: fixed;
   width: 100%;
-  z-index: 50;
+  z-index: 150;
 
   ${breakpoint("tablet", `
     padding: ${rem(64)};

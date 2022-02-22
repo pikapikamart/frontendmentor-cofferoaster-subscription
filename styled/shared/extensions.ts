@@ -44,6 +44,7 @@ export const HeroContainer = css`
   gap: ${fluid(24, 2.5, 32)} 0;
   padding: 0 ${rem(24)};
   text-align: center;
+  transition: background 1s ease;
 
   ${breakpoint("tablet", `
     align-items: flex-start;  

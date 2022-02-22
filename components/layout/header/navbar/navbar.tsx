@@ -1,4 +1,5 @@
 import React, { 
+  useState,
   useEffect,
   memo } from "react";
 import { 
@@ -16,6 +17,7 @@ import { Navlinks } from "@/components/shared/navlinks";
 const Navbar = () =>{
   const { isExpanded, handleExpansion } = useExpansion();
   const [ firstControl, lastControl, registerTrap ] = useTrapFocus<HTMLButtonElement, HTMLAnchorElement>();
+  const [ windowWidth, setWindowWidth ] = useState(0);
   const currentPath = useRouter().pathname;
 
   useEffect(() =>{
@@ -33,13 +35,32 @@ const Navbar = () =>{
     }
   }, [ isExpanded])
 
+  useEffect(() =>{
+
+  },[ windowWidth ])
+
+  useEffect(() =>{
+    const handleWidthResize = () =>{
+      setWindowWidth(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleWidthResize);
+  }, [ ])
+
   return (
-    <div onKeyDown={registerTrap}>
+    <div onKeyDown={event => registerTrap(event, 768)}>
       <StyledHamburger 
         aria-expanded={isExpanded}
         onClick={handleExpansion}
         aria-controls="navMenu"
-        ref={firstControl}>
+        ref={element => {
+          if ( isExpanded ) {
+            firstControl.current = element
+          }
+           else {
+             firstControl.current = null;
+           }
+        }}>
         <SrOnly>
           {`${isExpanded? "close" : "open"} menu navigation`}
         </SrOnly>
