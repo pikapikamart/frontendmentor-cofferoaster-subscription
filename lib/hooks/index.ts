@@ -29,7 +29,7 @@ export function useTrapFocus<F extends HTMLElement, L extends HTMLElement>(): [C
   const [ controlTrapWidth, setControlTrapWidth ] = useState(0);
   const [ shouldTrap, setShouldTrap ] = useState(false);
 
-  const registerTrap = ( event: React.KeyboardEvent<HTMLElement>, width: number | undefined) =>{
+  const registerTrap = ( event: React.KeyboardEvent<HTMLElement>, width: number | undefined = undefined) =>{
 
     if ( width ) {
       setControlTrapWidth(width);

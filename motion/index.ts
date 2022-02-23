@@ -77,6 +77,9 @@ export const customSwipeUpVariant = (y: string, duration: number, delay: number 
       delay,
       ease: "linear"
     }
+  },
+  hidden: {
+    opacity: 0
   }
 })
 
@@ -149,6 +152,26 @@ export const optionFormVariant = {
     transition: {
       duration: 1,
       ease: "easeIn"
+    }
+  }
+}
+
+export const checkoutVariant = {
+  initial : {
+    ...showUpVariant.initial
+  },
+  visible: {
+    ...showUpVariant.visible,
+    transition: {
+      ...showUpVariant.visible.transition,
+      delay: 0,
+      staggerChildren: .4
+    }
+  },
+  hidden: {
+    ...showUpVariant.initial,
+    transition: {
+      when: "afterChildren"
     }
   }
 }

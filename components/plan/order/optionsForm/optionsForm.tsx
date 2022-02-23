@@ -10,6 +10,7 @@ import { Summary } from "./summary";
 import { StyledCreatePlan } from "@/components/shared/createPlan/createPlan.styled";
 import { useTrackedState } from "@/store/tracked";
 import { Checkout } from "./checkout";
+import { AnimatePresence } from "framer-motion";
 
 
 const OptionsForm = () =>{
@@ -69,7 +70,9 @@ const OptionsForm = () =>{
         onClick={handleShowModal}>
         Create my plan!
       </StyledCreatePlan>
-      {showModal && <Checkout hideModal={setShowModal}/>}
+      <AnimatePresence>
+        {showModal && <Checkout hideModal={setShowModal}/>}
+      </AnimatePresence>
     </StyledOptionsForm>
   );
 }

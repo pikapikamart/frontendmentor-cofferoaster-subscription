@@ -15,6 +15,9 @@ import { DarkText } from "@/styled/shared/text.styled";
 import { StyledCreatePlan } from "@/components/shared/createPlan/createPlan.styled";
 import { Summary } from "../summary";
 import { useTrapFocus } from "@/lib/hooks";
+import { 
+  checkoutVariant,
+  customSwipeUpVariant } from "@/motion";
 
 
 interface CheckoutShape {
@@ -40,11 +43,17 @@ const Checkout = ({hideModal}: CheckoutShape) =>{
   }, [])
 
   return (
-    <StyledCheckoutContainer >
-      <StyledCheckout tabIndex={-1}
+    <StyledCheckoutContainer 
+      initial="initial"
+      animate="visible"
+      exit="hidden"
+      variants={checkoutVariant}>
+      <StyledCheckout 
+        tabIndex={-1}
         onBlur={handleHideModal}
         ref={modalRef}
-        onKeyDown={registerTrap}>
+        onKeyDown={registerTrap}
+        variants={customSwipeUpVariant("20%", .75)}>
         <StyledCheckoutHeading>Order Summary</StyledCheckoutHeading>
         <StyledCheckoutBlock>
           <Summary />
@@ -54,7 +63,7 @@ const Checkout = ({hideModal}: CheckoutShape) =>{
             <StyledCreatePlan as="button" 
             type="submit"
             ref={firstControl}>
-              Checkout {` `}
+              Checkout {` `}s
               <span> {`  - $14.00/mo`}</span>
             </StyledCreatePlan>
           </StyledCheckoutPriceContainer>

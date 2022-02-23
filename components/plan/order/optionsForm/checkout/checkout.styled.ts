@@ -11,10 +11,10 @@ import {
   StyledSummaryInfo } from "../summary/summary.styled";
 import { DarkText } from "@/styled/shared/text.styled";
 import { StyledCreatePlan } from "@/components/shared/createPlan/createPlan.styled";
+import { motion } from "framer-motion";
 
 
-export const StyledCheckoutContainer = styled.div`
-
+export const StyledCheckoutContainer = styled(motion.div)`
   background-color: rgba(0, 0, 0, .4);
   inset: 0;
   min-height: 100vh;
@@ -29,7 +29,7 @@ export const StyledCheckoutContainer = styled.div`
   `)}
 `
 
-export const StyledCheckout = styled.div`
+export const StyledCheckout = styled(motion.div)`
   background-color: #FFFFFF;
   border-radius: ${rem(8)};
   max-width: ${rem(540)};
