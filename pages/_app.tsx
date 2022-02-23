@@ -12,9 +12,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     <ThemeProvider theme={Theme}>
       <Layout>
         <Provider>
-          <AnimatePresence exitBeforeEnter
-            initial={false} 
-            onExitComplete={() => window.scrollTo(0, 0)}>
+          <AnimatePresence>
             <Component {...pageProps} key={router.route}/>
           </AnimatePresence>
         </Provider>

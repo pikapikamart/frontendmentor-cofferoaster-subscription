@@ -8,9 +8,11 @@ const AboutUs = () =>{
 
   return (
     <>
+      <main>
       <Hero />
       <Values />
       <Headquarters />
+      </main>
     </>
   );
 }

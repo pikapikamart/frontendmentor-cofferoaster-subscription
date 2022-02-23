@@ -2,12 +2,10 @@ import styled from "styled-components";
 import { 
   fluid, 
   breakpoint } from "@/styled/functions";
-import { HeroContainer } from "@/styled/shared/extensions";
+import { HeroContainer } from "@/styled/shared/motions";
 
 
-export const StyledHero = styled.div`
-  ${HeroContainer}
-
+export const StyledHero = styled(HeroContainer)`
   background-image: url("/plan/mobile/image-hero-blackcup.jpg");
   margin-bottom: ${fluid(120, 13, 168)};
   min-height: ${fluid(400, 36, 450)};

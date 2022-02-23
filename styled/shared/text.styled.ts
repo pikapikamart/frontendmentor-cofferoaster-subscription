@@ -22,14 +22,15 @@ export const HeroHeading = styled(motion.h1)`
   `}
 `
 
-export const HeroText = styled.p`
+export const HeroText = styled(motion.p)`
   font-weight: 400;
   font-size: ${fluid(15, 1.3, 16)};
   max-width: 47ch;
+  margin: ${fluid(24, 2.5, 32)} 0 ;
   opacity: .8;
 `
 
-export const Heading2 = styled.h2`
+export const Heading2 = styled(motion.h2)`
   line-height: 1.2;
   margin-bottom: ${fluid(24, 3, 32)};
 
