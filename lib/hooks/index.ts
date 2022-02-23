@@ -3,7 +3,6 @@ import React, {
   useRef, 
   useEffect,
   MutableRefObject } from "react";
-import { useInView } from "react-intersection-observer";
 
 
 export const useExpansion = () =>{
@@ -18,7 +17,7 @@ export const useExpansion = () =>{
 }
 
 interface RegisterTrap {
-  (event : React.KeyboardEvent<HTMLElement>, width: number | undefined) : void
+  (event : React.KeyboardEvent<HTMLElement>, width: number) : void
 }
 
 type Control<Type> =  MutableRefObject<Type | null>;
@@ -29,7 +28,7 @@ export function useTrapFocus<F extends HTMLElement, L extends HTMLElement>(): [C
   const [ controlTrapWidth, setControlTrapWidth ] = useState(0);
   const [ shouldTrap, setShouldTrap ] = useState(false);
 
-  const registerTrap = ( event: React.KeyboardEvent<HTMLElement>, width: number | undefined = undefined) =>{
+  const registerTrap = ( event: React.KeyboardEvent<HTMLElement>, width: number = 0) =>{
 
     if ( width ) {
       setControlTrapWidth(width);
@@ -96,18 +95,4 @@ export const useBodyFocus = () =>{
     document.body.focus();
     document.body.removeAttribute("tabindex");
   }, [])
-}
-
-export const useCheckVisibility = ( threshold : number ) => {
-  const [ isSeen, setIsSeen ] = useState(false);
-  const { ref, inView } = useInView({ threshold });
-  
-  useEffect(() =>{
-    // run only one if want
-    if ( !isSeen && inView ) {
-      setIsSeen(true)
-    }
-  }, [ inView ]);
-
-  return { ref, inView, isSeen };
 }

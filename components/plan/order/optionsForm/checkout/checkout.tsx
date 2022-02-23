@@ -52,7 +52,7 @@ const Checkout = ({hideModal}: CheckoutShape) =>{
         tabIndex={-1}
         onBlur={handleHideModal}
         ref={modalRef}
-        onKeyDown={registerTrap}
+        onKeyDown={ event => registerTrap(event, 0)}
         variants={customSwipeUpVariant("20%", .75)}>
         <StyledCheckoutHeading>Order Summary</StyledCheckoutHeading>
         <StyledCheckoutBlock>

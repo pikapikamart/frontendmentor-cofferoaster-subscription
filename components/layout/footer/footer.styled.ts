@@ -78,3 +78,21 @@ export const StyledSocialMedias = styled.ul`
     display: block;
   }
 `
+
+export const StyledSocialLink = styled.a`
+
+  ${breakpoint("desktop", `
+
+    & img {
+      transform-origin: 100% 100%;
+      transition: transform .3s ease
+    }
+
+    &:hover {
+
+      & img {
+        transform: rotate(15deg);
+      }
+    }
+  `)}
+`

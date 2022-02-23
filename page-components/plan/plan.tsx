@@ -1,7 +1,6 @@
 import { Hero } from "@/components/plan/hero";
 import { Steps } from "@/components/plan/steps";
 import { OrderPlanning } from "@/components/plan/order";
-import { withPageTransition } from "@/components/shared/motions";
 
 
 const Plan = () =>{
@@ -16,5 +15,4 @@ const Plan = () =>{
 }
 
 
-// export default withPageTransition(Plan);
 export default Plan;

@@ -5,7 +5,6 @@ import {
   StyledLocationHeading } from "./location.styled";
 import { LocationsData } from "./locationData";
 import { 
-  staggerChildren,
   customSwipeUpVariant,
   squishedVariant } from "motion";
 
@@ -24,8 +23,6 @@ const LocationList = () =>{
           src={location.map} 
           alt="" 
           aria-hidden="true"
-          whileInView="visible"
-          viewport={{once: true, amount: 1}}
           variants={squishedVariant(1.4 * (( index+4 ) / 10))} />
         <StyledLocationHeading>{location.country}</StyledLocationHeading>
         <address>

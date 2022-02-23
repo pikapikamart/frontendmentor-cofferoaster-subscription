@@ -2,7 +2,8 @@ import {
   StyledFooter,
   StyledFooterLogo,
   StyledNavList,
-  StyledSocialMedias } from "./footer.styled";
+  StyledSocialMedias,
+  StyledSocialLink } from "./footer.styled";
 import { useRouter } from "next/router";
 import { Navlinks } from "@/components/shared/navlinks";
 import { socialMedias } from "@/components/shared/data/socialMedias";
@@ -15,10 +16,10 @@ const Footer = () =>{
   const renderSocialMedias = () =>{
     const links = socialMedias.map(link =>(
       <li key={link.id}>
-        <a href={link.url}>
+        <StyledSocialLink href={link.url}>
           <SrOnly>{link.name}</SrOnly>
           <img src={link.image} alt="" aria-hidden="true" />
-        </a>
+        </StyledSocialLink>
       </li>
     ));
 
@@ -32,7 +33,7 @@ const Footer = () =>{
           src="/shared/logo-footer.svg"
           alt="coffeeroasters" />
       </div>
-      <nav>
+      <nav aria-label="footer">
         <StyledNavList>
           <Navlinks navLabel="footer" currentPath={currentPath}/>
         </StyledNavList>

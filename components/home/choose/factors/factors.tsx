@@ -16,13 +16,13 @@ const FactorsList = () =>{
       <StyledFactor 
         key={factor.id}
         initial="initial"
-        variants={customSwipeUpVariant("15%", .55)}
         whileInView="visible"
-        viewport={{
-          once: true,
-          amount: .5}}
-        >
-        <StyledFactorImage src={factor.image} alt="" aria-hidden="true" />
+        viewport={{once: true,amount: .5}}
+        variants={customSwipeUpVariant("15%", .55)}>
+        <StyledFactorImage 
+          src={factor.image} 
+          alt="" 
+          aria-hidden="true" />
         <div>
           <StyledFactorHeading>{factor.name}</StyledFactorHeading>
           <WhiteText>{factor.description}</WhiteText>

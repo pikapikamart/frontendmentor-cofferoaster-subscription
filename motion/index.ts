@@ -1,17 +1,5 @@
 
 
-export const dummyVariant = {
-  initial: {
-    opacity: 1
-  },
-  visible: {
-    opacity: 1
-  },
-  hidden: {
-    opacity: 1
-  }
-}
-
 export const staggerChildren = (delay: number) => ({
   visible: {
     transition: {
@@ -19,26 +7,6 @@ export const staggerChildren = (delay: number) => ({
     }
   }
 })
-
-export const PageVariants = {
-  initial: {
-    opacity: .5,
-    x: 10
-  },
-  visible: {
-    opacity: 1,
-    x: 0
-  },
-  hidden: {
-    opacity: .5,
-    x:  10
-  }
-}
-
-export const PageTransition = {
-  duration: .65,
-  ease: "linear"
-}
 
 const baseSwipeVariant = {
   initial: {
@@ -110,12 +78,21 @@ export const squishedVariant = (delay: number) => ({
   }
 })
 
+export const workLineVariant = {
+  initial: {
+    "--line": "0%"
+  } as any,
+  visible: {
+    "--line": "100%"
+  } as any
+}
+
 export const workVariant = ( delay: number ) => ({
   initial: {
     "--after": "100%"
   } as any,
   visible: {
-   "--after" : "0%",
+   "--after": "0%",
    transition: {
      delay
    }

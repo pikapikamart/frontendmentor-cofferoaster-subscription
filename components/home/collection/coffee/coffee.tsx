@@ -6,26 +6,26 @@ import {
   StyledCoffeeHeading,
   StyledCoffeeText
  } from "./coffee.styled";
-import { useCheckVisibility } from "@/lib/hooks";
 import { 
-  staggerChildren,
   customSwipeUpVariant,
   squishedVariant } from "motion";
 
 
 const CoffeeList = () =>{
-  const { ref, isSeen } = useCheckVisibility(.35);
   
   const renderCoffees = () =>{
     const coffees = CoffeeData.map(( coffee, index) =>(
       <StyledCoffee 
         key={coffee.id}
+        initial="initial"
+        whileInView="visible"
+        viewport={{once: true, amount: .5}}
         variants={customSwipeUpVariant("10%", .35)}>
         <StyledCoffeeImage 
           src={coffee.image} 
           alt="" 
           aria-hidden="true"
-          variants={squishedVariant(1.4 * ((index+1) / 10))}/>
+          variants={squishedVariant(1.2 * ((index+1) / 10))}/>
         <div>
           <StyledCoffeeHeading>{coffee.name}</StyledCoffeeHeading>
           <StyledCoffeeText>{coffee.description}</StyledCoffeeText>
@@ -38,11 +38,7 @@ const CoffeeList = () =>{
   }
 
   return (
-    <StyledCoffeesList
-      variants={staggerChildren(.30)}
-      initial="initial"
-      animate={isSeen? "visible": "initial"}
-      ref={ref}>
+    <StyledCoffeesList>
       {renderCoffees()}
     </StyledCoffeesList>
   );

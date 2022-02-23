@@ -9,7 +9,7 @@ import {
 import { motion } from "framer-motion";
 
 
-export const StyledOrderStepList = styled.ol`
+export const StyledOrderStepList = styled(motion.ol)`
 
   ${breakpoint("tablet", `
     ${FlexRowBetween}
@@ -23,6 +23,9 @@ export const StyledOrderStepList = styled.ol`
       height: ${rem(2)};
       inset: ${rem(15)} auto auto 0;
       position: absolute;
+      transform-origin: left;
+      transform: scaleX(var(--line));
+      transition: transform 1.5s linear;
       width: 100%;
     }
   `)}
