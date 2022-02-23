@@ -6,9 +6,10 @@ import {
   FlexWrapCenter, 
   FlexColumnCenter } from "@/styled/shared/extensions";
 import { DarkText } from "@/styled/shared/text.styled";
+import { motion } from "framer-motion";
 
 
-export const StyledCoffeesList = styled.ul`
+export const StyledCoffeesList = styled(motion.ul)`
   ${FlexWrapCenter}
 
   align-items: flex-start;
@@ -27,7 +28,7 @@ export const StyledCoffeesList = styled.ul`
   `)}
 `
 
-export const StyledCoffee = styled.li`
+export const StyledCoffee = styled(motion.li)`
   ${FlexColumnCenter}
 
   &:not(:last-of-type) {
@@ -48,7 +49,7 @@ export const StyledCoffee = styled.li`
   `)}
 `
 
-export const StyledCoffeeImage = styled.img`
+export const StyledCoffeeImage = styled(motion.img)`
   margin-bottom: ${rem(24)};
 
   ${breakpoint("tablet", `

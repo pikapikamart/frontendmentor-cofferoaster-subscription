@@ -7,6 +7,9 @@ import {
 import { OrderStepsData } from "./orderStepsData";
 import { SrOnly } from "@/styled/shared/helpers";
 import { DarkText, WhiteText } from "@/styled/shared/text.styled";
+import { 
+  workVariant,
+  swirlSquishedVariant } from "@/motion";
 
 
 interface OrderStepsShape {
@@ -17,9 +20,17 @@ interface OrderStepsShape {
 const OrderStepsList = ({ textColor, bgColor } : OrderStepsShape) =>{
 
   const renderSteps = () =>{
-    const steps = OrderStepsData.map( ( step, index ) =>(
-      <StyledOrderStep bgColor={bgColor} key={step.id}>
-        <StyledOrderStepNumber>
+    const steps = OrderStepsData.map(( step, index ) =>(
+      <StyledOrderStep 
+        bgcolor={bgColor} 
+        key={step.id}
+        initial="initial"
+        whileInView="visible"
+        viewport={{ once: true, amount: .5}}
+        variants={workVariant(.5 * index)}>
+        <StyledOrderStepNumber
+          variants={swirlSquishedVariant(.3 *( index+1 ))}
+        >
           <span aria-hidden="true">0</span>
           {index+1}
           <SrOnly>!</SrOnly>

@@ -6,6 +6,7 @@ import {
 import { 
   Fraunces, 
   FlexRowBetween } from "@/styled/shared/extensions";
+import { motion } from "framer-motion";
 
 
 export const StyledOrderStepList = styled.ol`
@@ -28,16 +29,26 @@ export const StyledOrderStepList = styled.ol`
 `
 
 interface OrderStep {
-  bgColor: "light" | "dark"
+  bgcolor: "light" | "dark"
 }
 
-export const StyledOrderStep = styled.li<OrderStep>`
+export const StyledOrderStep = styled(motion.li)<OrderStep>`
+  position: relative;
 
   &:not(:last-of-type) {
     margin-bottom: ${rem(56)};
   }
+
+  &::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform-origin: right;
+    transform: scaleX(var(--after));
+    transition: transform .5s linear;
+  }
   
-  ${({ theme, bgColor }) =>`
+  ${({ theme, bgcolor }) =>`
     ${breakpoint("tablet", `
       flex-basis: 100%;
       max-width: ${rem(285)};
@@ -49,7 +60,7 @@ export const StyledOrderStep = styled.li<OrderStep>`
       }
 
       &:first-of-type {
-          background-image: ${bgColor==="dark"? `linear-gradient(90deg, ${theme.colors.darkBlue} 0%, ${theme.colors.darkBlue} 15px, transparent 15px, transparent 100%)` : "none"};
+          background-image: ${bgcolor==="dark"? `linear-gradient(90deg, ${theme.colors.darkBlue} 0%, ${theme.colors.darkBlue} 15px, transparent 15px, transparent 100%)` : "none"};
       }
 
       &:nth-of-type(2) {
@@ -57,15 +68,15 @@ export const StyledOrderStep = styled.li<OrderStep>`
       }
 
       &:last-of-type {
-        background-color: ${bgColor==="light"? "#FFFFFF" : "transparent"};
+        background-color: ${bgcolor==="light"? "#FFFFFF" : "transparent"};
         z-index: 10;
 
-        background-image: ${bgColor==="dark"? `linear-gradient(90deg, transparent 0%, transparent 15px, ${theme.colors.darkBlue} 15px, ${theme.colors.darkBlue} 100%)` : "none"};
+        background-image: ${bgcolor==="dark"? `linear-gradient(90deg, transparent 0%, transparent 15px, ${theme.colors.darkBlue} 15px, ${theme.colors.darkBlue} 100%)` : "none"};
       }
 
       &::before {
         content: "";
-        background-color: ${bgColor==="light"? "#FFFFFF" : "transparent"};
+        background-color: ${bgcolor==="light"? "#FFFFFF" : "transparent"};
         border-radius: 50%;
         border: 2px solid #0E8784;
         height: ${rem(31)};
@@ -77,10 +88,11 @@ export const StyledOrderStep = styled.li<OrderStep>`
   `}
 `
 
-export const StyledOrderStepNumber = styled.p`
+export const StyledOrderStepNumber = styled(motion.p)`
   ${Fraunces}
   
   line-height: 1;
+    max-width: max-content;
 
   ${({ theme }) => `
     color: ${theme.colors.paleOrange};

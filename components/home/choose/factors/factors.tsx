@@ -6,13 +6,22 @@ import {
   StyledFactorHeading,
  } from "./factors.styled";
 import { WhiteText } from "@/styled/shared/text.styled";
+import { customSwipeUpVariant } from "motion";
 
 
 const FactorsList = () =>{
 
   const renderFactors = () =>{
     const factors = FactorsData.map( factor => (
-      <StyledFactor key={factor.id}>
+      <StyledFactor 
+        key={factor.id}
+        initial="initial"
+        variants={customSwipeUpVariant("15%", .55)}
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: .5}}
+        >
         <StyledFactorImage src={factor.image} alt="" aria-hidden="true" />
         <div>
           <StyledFactorHeading>{factor.name}</StyledFactorHeading>

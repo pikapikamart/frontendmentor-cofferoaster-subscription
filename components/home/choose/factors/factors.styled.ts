@@ -5,6 +5,7 @@ import {
   breakpoint } from "@/styled/functions";
 import { 
   FlexColumnCenter } from "@/styled/shared/extensions";
+import { motion } from "framer-motion";
 
 
 export const StyledFactorsList = styled.ul`
@@ -22,7 +23,7 @@ export const StyledFactorsList = styled.ul`
   `)}
 `
 
-export const StyledFactor = styled.li`
+export const StyledFactor = styled(motion.li)`
   ${FlexColumnCenter}
 
   background-color: ${({ theme }) => theme.colors.darkCyan};

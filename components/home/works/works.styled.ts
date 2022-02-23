@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { rem, fluid, breakpoint } from "@/styled/functions";
-import { FlexColumnCenter } from "@/styled/shared/extensions";
-import { StyledOrderStepList } from "@/components/shared/orderSteps/orderSteps.styled";
+import { 
+  StyledOrderStepList,
+  StyledOrderStep } from "@/components/shared/orderSteps/orderSteps.styled";
 import { StyledCreatePlan } from "@/components/shared/createPlan/createPlan.styled";
 
 
@@ -11,6 +12,13 @@ export const StyledWorks = styled.div`
 
   & ${StyledOrderStepList} {
     margin: ${rem(80)} 0;
+  }
+
+  & ${StyledOrderStep} {
+
+    &::after {
+      background-color: #FFFFFF;
+    }
   }
 
   & ${StyledCreatePlan} {
