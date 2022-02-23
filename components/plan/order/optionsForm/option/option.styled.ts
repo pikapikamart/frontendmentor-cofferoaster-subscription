@@ -4,6 +4,7 @@ import {
   fluid, 
   breakpoint } from "@/styled/functions";
 import { Fraunces } from "@/styled/shared/extensions";
+import { motion } from "framer-motion";
 
 
 export const StyledOptionButton = styled.button`
@@ -48,7 +49,7 @@ export const StyledOptionButton = styled.button`
   `}
 `
 
-export const StyledOptionField = styled.fieldset`
+export const StyledOptionField = styled(motion.fieldset)`
   border: none;
   margin: 0 auto ${rem(110)};
   max-width: ${rem(328)};

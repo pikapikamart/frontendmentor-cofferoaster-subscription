@@ -7,7 +7,7 @@ import {
 import { CreatePlan } from "@/components/shared/createPlan";
 import { 
   dummyVariant,
-  swipeUpVariant,
+  customSwipeUpVariant,
   showUpVariant } from "@/motion";
 import { motion } from "framer-motion";
 
@@ -21,7 +21,7 @@ const Hero = () =>{
       animate="visible" 
       exit="hidden">
       <HiddenContainer>
-        <HeroHeading variants={swipeUpVariant}>Great Coffee made simple.</HeroHeading>
+        <HeroHeading variants={customSwipeUpVariant("100%", .65)}>Great Coffee made simple.</HeroHeading>
       </HiddenContainer>
       <HeroText variants={showUpVariant}>
         Start your mornings with the world’s best coffees. 

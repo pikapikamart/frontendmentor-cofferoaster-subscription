@@ -5,7 +5,7 @@ import {
 import { HiddenContainer } from "@/components/home/hero/hero.styled";
 import { 
   dummyVariant,
-  swipeUpVariant,
+  customSwipeUpVariant,
   showUpVariant } from "@/motion";
 
 
@@ -18,7 +18,7 @@ const Hero = () => {
       animate="visible" 
       exit="hidden">
       <HiddenContainer>
-        <HeroHeading variants={swipeUpVariant}>Create a plan</HeroHeading>
+        <HeroHeading variants={customSwipeUpVariant("100%", .65)}>Create a plan</HeroHeading>
       </HiddenContainer>
       <HeroText variants={showUpVariant}>Build a subscription plan that best fits your needs. We offer an assortment of the best artisan coffees from around the globe delivered fresh to your door.</HeroText>
     </StyledHero>

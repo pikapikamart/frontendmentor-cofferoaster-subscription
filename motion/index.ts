@@ -40,22 +40,31 @@ export const PageTransition = {
   ease: "linear"
 }
 
-export const swipeUpVariant = {
+const baseSwipeVariant = {
   initial: {
-    y: "100%",
     opacity: 0
   },
   visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: .65,
-      ease: "easeOut"
-    }
+    opacity: 1
   }
 }
 
-export const customSwipeUpVariant = (y: string, duration: number, ease: string = "easeOut" ) => ({
+export const swipeSideVariant = ( x: string, duration: number, ease: string = "easeOut") =>({
+  initial: {
+    x,
+    opacity: 0
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration,
+      ease
+    }
+  }
+})
+
+export const customSwipeUpVariant = (y: string, duration: number, delay: number = 0 ) => ({
   initial: {
     y,
     opacity: 0,
@@ -65,7 +74,8 @@ export const customSwipeUpVariant = (y: string, duration: number, ease: string =
     opacity: 1,
     transition: {
       duration,
-      ease
+      delay,
+      ease: "linear"
     }
   }
 })
@@ -123,3 +133,22 @@ export const swirlSquishedVariant = ( delay: number ) =>({
     }
   }
 })
+
+export const optionFormVariant = {
+  initial: {
+    maxHeight: 0,
+    marginBottom: 0,
+    opacity: 0,
+    overflow: "hidden"
+  },
+  visible: {
+    maxHeight: 600,
+    marginBottom: 100,
+    opacity: 1,
+    overflow: "visible",
+    transition: {
+      duration: 1,
+      ease: "easeIn"
+    }
+  }
+}

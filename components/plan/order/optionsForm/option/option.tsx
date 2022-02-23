@@ -11,6 +11,8 @@ import { SrOnly } from "@/styled/shared/helpers";
 import { 
   useSetState, 
   useTrackedState} from "@/store/tracked";
+import { AnimatePresence } from "framer-motion";
+import { optionFormVariant } from "@/motion";
 
 
 interface Option {
@@ -60,14 +62,21 @@ const Option = ({data}: Option) =>{
         onClick={handleExpansion}>
           {data.question}
       </StyledOptionButton>
-      {isExpanded && (
-        <StyledOptionField>
-          <legend>
-            <SrOnly>{data.legend}</SrOnly>
-          </legend>
-          {renderChoices()}
+      <AnimatePresence>
+        {isExpanded && (
+          <StyledOptionField
+            initial="initial"
+            animate="visible"
+            exit="initial"
+            variants={optionFormVariant}
+            >
+            <legend>
+              <SrOnly>{data.legend}</SrOnly>
+            </legend>
+            {renderChoices()}
         </StyledOptionField>
       )}
+      </AnimatePresence>
     </li>
   );
 }

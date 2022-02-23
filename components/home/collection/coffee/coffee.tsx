@@ -20,7 +20,7 @@ const CoffeeList = () =>{
     const coffees = CoffeeData.map(( coffee, index) =>(
       <StyledCoffee 
         key={coffee.id}
-        variants={customSwipeUpVariant("10%", .35, "linear")}>
+        variants={customSwipeUpVariant("10%", .35)}>
         <StyledCoffeeImage 
           src={coffee.image} 
           alt="" 

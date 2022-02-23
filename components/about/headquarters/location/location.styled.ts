@@ -2,9 +2,10 @@ import styled from "styled-components";
 import { 
   rem, 
   breakpoint } from "@/styled/functions";
+import { motion } from "framer-motion";
 
 
-export const StyledLocationList = styled.ul`
+export const StyledLocationList = styled(motion.ul)`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -19,13 +20,13 @@ export const StyledLocationList = styled.ul`
   `)}
 `
 
-export const StyledLocation = styled.li`
+export const StyledLocation = styled(motion.li)`
   color: ${({ theme }) => theme.colors.darkGreyBlue};
   flex-basis: 100%;
   max-width: ${rem(285)};
 `
 
-export const StyledLocationMap = styled.img`
+export const StyledLocationMap = styled(motion.img)`
   margin: 0 auto;
 
   ${breakpoint("tablet", `

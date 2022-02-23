@@ -5,9 +5,10 @@ import {
   breakpoint } from "@/styled/functions";
 import { FlexRowBetween } from "@/styled/shared/extensions";
 import { WhiteText } from "@/styled/shared/text.styled";
+import { motion } from "framer-motion";
 
 
-export const StyledCommitment = styled.div`
+export const StyledCommitment = styled(motion.div)`
   color: ${({ theme }) => theme.colors.darkGreyBlue};
   margin: 0 auto ${rem(198)};
   max-width: ${rem(450)};
@@ -67,7 +68,7 @@ export const StyledQuality = styled.div`
   `)}
 `
 
-export const StyledQualityImage = styled.img`
+export const StyledQualityImage = styled(motion.img)`
   border-radius: ${rem(8)};
   left: 50%;
   position: absolute;
@@ -79,7 +80,7 @@ export const StyledQualityImage = styled.img`
   `)}
 `
 
-export const StyledQualityText = styled.div`
+export const StyledQualityText = styled(motion.div)`
   padding-top: ${fluid(142, 30, 224)}  ;
 
   & ${WhiteText} {

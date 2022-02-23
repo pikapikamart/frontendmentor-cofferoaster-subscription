@@ -3,7 +3,9 @@ import {
   rem, 
   fluid, 
   breakpoint } from "@/styled/functions";
-import { StyledOrderStepList } from "@/components/shared/orderSteps/orderSteps.styled";
+import { 
+  StyledOrderStepList,
+  StyledOrderStep } from "@/components/shared/orderSteps/orderSteps.styled";
 
 
 export const StyledSteps = styled.div`
@@ -23,6 +25,13 @@ export const StyledSteps = styled.div`
   & ${StyledOrderStepList} {
     position: relative;
     z-index: 5;
+  }
+
+  & ${StyledOrderStep} {
+
+    &::after{
+      background-color: ${({ theme }) => theme.colors.darkBlue};
+    }
   }
 
   ${breakpoint("tablet", `

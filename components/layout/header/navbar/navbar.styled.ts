@@ -29,6 +29,7 @@ export const StyledHamburger = styled.button`
 export const StyledNavMenu = styled.nav`
   background-image: linear-gradient(0deg, rgba(254, 252, 247, .5), rgba(254, 252, 247) 60%);
   inset: 0 0 0 0;
+  min-height: 100vh;
   opacity: 0;
   padding-top: ${rem(130)};
   position: fixed;

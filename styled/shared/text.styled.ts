@@ -3,12 +3,12 @@ import { fluid } from "../functions";
 import { motion } from "framer-motion";
 
 
-export const WhiteText = styled.p`
+export const WhiteText = styled(motion.p)`
   color: ${({ theme }) => theme.colors.lightCream};
   font-size: ${fluid(15, 1.3, 16)};
 `
 
-export const DarkText = styled.p`
+export const DarkText = styled(motion.p)`
   color: ${({ theme }) => theme.colors.darkGreyBlue};
   font-size: ${fluid(15, 1.3, 16)};
 `
