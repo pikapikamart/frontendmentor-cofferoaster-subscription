@@ -11,6 +11,7 @@ import {
   workLineVariant,
   workVariant,
   swirlSquishedVariant } from "@/motion";
+import { useCheckVisibility } from "@/lib/hooks";
 
 
 interface OrderStepsShape {
@@ -19,12 +20,16 @@ interface OrderStepsShape {
 }
 
 const OrderStepsList = ({ textColor, bgColor } : OrderStepsShape) =>{
+  const { ref, isSeen } = useCheckVisibility(.5);
 
   const renderSteps = () =>{
     const steps = OrderStepsData.map(( step, index ) =>(
       <StyledOrderStep 
         bgcolor={bgColor} 
         key={step.id}
+        initial="initial"
+        whileInView="visible"
+        viewport={{once: true, amount: .5}}
         variants={workVariant(.5 * index)}>
         <StyledOrderStepNumber
           variants={swirlSquishedVariant(.3 *( index+1 ))}>
@@ -45,9 +50,9 @@ const OrderStepsList = ({ textColor, bgColor } : OrderStepsShape) =>{
 
   return (
     <StyledOrderStepList
+      ref={ref}
       initial="initial"
-      whileInView="visible"
-      viewport={{once: true, amount: .5}}
+      animate={isSeen? "visible" : "initial"}
       variants={workLineVariant}>
       {renderSteps()}
     </StyledOrderStepList>

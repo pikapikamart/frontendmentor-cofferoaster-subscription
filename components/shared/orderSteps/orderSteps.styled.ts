@@ -95,12 +95,17 @@ export const StyledOrderStepNumber = styled(motion.p)`
   ${Fraunces}
   
   line-height: 1;
-    max-width: max-content;
+  max-width: max-content;
+  margin: 0 auto;
 
   ${({ theme }) => `
     color: ${theme.colors.paleOrange};
     font-size: ${rem(theme.fontSizes.hSizeTwo)};
   `}
+
+  ${breakpoint("tablet", `
+    margin: 0;
+  `)}
 `
 
 interface OderStepHeading {

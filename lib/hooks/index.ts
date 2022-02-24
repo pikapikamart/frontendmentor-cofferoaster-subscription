@@ -3,6 +3,7 @@ import React, {
   useRef, 
   useEffect,
   MutableRefObject } from "react";
+import { useInView } from "react-intersection-observer";
 
 
 export const useExpansion = () =>{
@@ -96,3 +97,15 @@ export const useBodyFocus = () =>{
     document.body.removeAttribute("tabindex");
   }, [])
 }
+
+export const useCheckVisibility = ( threshold: number ) =>{
+  const [ isSeen, setIsSeen ] = useState(false);
+  const { ref, inView } = useInView({ threshold });
+
+  useEffect(() =>{
+    if ( !isSeen && inView ) {
+      setIsSeen(true);
+    }
+  }, [ inView ]);
+
+  return { ref, inView, isSeen };}
