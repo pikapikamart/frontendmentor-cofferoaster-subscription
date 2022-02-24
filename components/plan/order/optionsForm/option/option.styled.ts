@@ -43,6 +43,10 @@ export const StyledOptionButton = styled.button`
     }
   }
 
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
   ${({ theme }) =>`
     color: ${theme.colors.grey};
     font-size: ${fluid(theme.fontSizes.hSizeFive, 4, theme.fontSizes.hSizeThree)};

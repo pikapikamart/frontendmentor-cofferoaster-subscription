@@ -21,7 +21,12 @@ const OptionsForm = () =>{
 
     for ( const [_, val] of Object.entries(coffeeChoices)) {
       if ( !val ) {
-        return false;
+        if ( coffeeChoices["coffee-drinking"]==="Capsule" ) {
+          continue;
+        }
+        else {
+          return false;
+        }
       }
     }
 

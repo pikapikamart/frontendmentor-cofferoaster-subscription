@@ -131,3 +131,48 @@ export const OptionsData: Option[] = [
     ]
   }
 ]
+
+interface Grams {
+  price: number,
+  increment: number
+}
+
+// Do not make use of this indexing, bad practice
+// I just did this because can't came up with more practical approach in the state
+
+interface CoffeePricing {
+  grams: {
+    [key: string]: Grams,
+    "250g": Grams,
+    "500g": Grams,
+    "1000g": Grams
+  },
+  dates: {
+    [key: string]: number[],
+    "Every week": number[],
+    "Every 2 week" : number[],
+    "Every month": number[]
+  }
+}
+
+export const coffeePricing: CoffeePricing = {
+  grams: {
+    "250g": {
+      price: 7.20,
+      increment: 2.40
+    },
+    "500g": {
+      price: 13,
+      increment: 4.50
+    },
+    "1000g": {
+      price: 22.00,
+      increment: 10.00
+    }
+  },
+  dates: {
+    "Every week": [0, 1],
+    "Every 2 week" : [1, 2],
+    "Every month": [2, 1]
+  }
+}

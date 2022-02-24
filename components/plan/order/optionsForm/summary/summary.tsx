@@ -13,7 +13,8 @@ const Summary = () =>{
     <StyledSummary aria-hidden="true">
       <StyledSummaryHeading>order summary</StyledSummaryHeading>
       <StyledSummaryInfo>
-        "I drink my coffee as 
+        "I drink my coffee 
+        <span>{coffeeChoices["coffee-drinking"]==="Capsule"? " using " : " as "}</span> 
         <StyledSummaryChoices>
           {coffeeChoices["coffee-drinking"]? ` ${coffeeChoices["coffee-drinking"]}` : " _____"}
         </StyledSummaryChoices>
@@ -25,10 +26,12 @@ const Summary = () =>{
         <StyledSummaryChoices>
           {coffeeChoices["coffee-quantity"]? ` ${coffeeChoices["coffee-quantity"]}` : " _____"}
         </StyledSummaryChoices>
-        {` `}ground ala 
-        <StyledSummaryChoices>
+        {` `}ground {coffeeChoices["coffee-drinking"]==="Capsule"? " " : " ala "}
+        {coffeeChoices["coffee-drinking"]!=="Capsule" && (
+          <StyledSummaryChoices>
           {coffeeChoices["coffee-grind"]? ` ${coffeeChoices["coffee-grind"]}` : " _____"}
-        </StyledSummaryChoices>
+          </StyledSummaryChoices>
+        )}
         , sent to me 
         <StyledSummaryChoices>
           {coffeeChoices["coffee-delivery"]? ` ${coffeeChoices["coffee-delivery"]}` : " _____"}

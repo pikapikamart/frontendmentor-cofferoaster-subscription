@@ -39,7 +39,7 @@ const Option = ({data}: Option) =>{
           id={choice.id}
           value={choice.label}
           onChange={handleChange}
-          checked={coffeeChoice[data.radioGroup] === choice.label}
+          checked={coffeeChoice[data.radioGroup]===choice.label}
            />
         <StyledOptionLabel htmlFor={choice.id}>
           <StyledOptionLabelHeading>
@@ -56,10 +56,12 @@ const Option = ({data}: Option) =>{
 
   return (
     <li>
-      <StyledOptionButton id={data.id}
+      <StyledOptionButton 
+        id={data.id}
         aria-expanded={isExpanded}
         aria-controls={data.radioGroup}
-        onClick={handleExpansion}>
+        onClick={handleExpansion}
+        disabled={data.id==="order-grind" && coffeeChoice["coffee-drinking"]==="Capsule"? true : false}>
           {data.question}
       </StyledOptionButton>
       <AnimatePresence>
@@ -68,8 +70,7 @@ const Option = ({data}: Option) =>{
             initial="initial"
             animate="visible"
             exit="initial"
-            variants={optionFormVariant}
-            >
+            variants={optionFormVariant}>
             <legend>
               <SrOnly>{data.legend}</SrOnly>
             </legend>

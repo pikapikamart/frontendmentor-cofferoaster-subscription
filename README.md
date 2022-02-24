@@ -1,34 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Mentor - Coffeeroasters subscription site
 
-## Getting Started
+This is a solution to the [Coffeeroasters subscription site](https://www.frontendmentor.io/challenges/coffeeroasters-subscription-site-5Fc26HVY6/hub/coffeeroasters-subscription-site-cfA_Leb5p). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Overview
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### The challenge
 
-## Learn More
+Users should be able to:
 
-To learn more about Next.js, take a look at the following resources:
+- View the optimal layout for each page depending on their device's screen size
+- See hover states for all interactive elements throughout the site
+- Make selections to create a coffee subscription and see an order summary modal of their choices (details provided below)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Screenshot
 
-## Deploy on Vercel
+![Desktop-view](finished/desktop.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Links
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Live Site URL: [Live site of the challenge](https://frontendmentor-space-tourism.vercel.app/)
+
+## My process
+
+Hello, this is my 23rd challenge from frontendmentor^^. it's been a long time since I submitted a new solution so it is kind of refreshing to make one again^^.
+
+For this one, I used next.js since it makes handling multi pages easier. 
+ 1. I used react-context to store data at first I want to use initialprops but then again, if I would to use it, I would need to create a store as well or props-drilling which I don't like.
+ 2. Changed. I removed the context and used getStaticProps so that it will serve now the data instead of treating it as SPA.
+
+I used a custom link for the api since I don't know how to fetch local .json file in react :>>.
+
+What challenge me here is the animation since I am new to framer-motion and my schedule is really hectic since I have loads of school activs but finished them so i am glad, got my laptop formatted as well.
+
+Overall, I am please on this but could have used more animations, like space-y animations right. Thank you reading this, hope you have great day^^
+
+### Built with
+
+- Semantic HTML5 markup
+- FlexBox
+- Grid
+- Sass 
+- React
+- Next.js
+- Framer-motion
+
+### What I learned
+
+I learned on this challenge to implement some things from framer-motion in react. I am new to using framer-motion to be honest so I don't know  if I used it properly but hey, it works it works especially when just starting out right.
+
+I also learned how to use figma:>> I am really new to figma, first time to use it on this challenge since it have the design which is really nice yey. I am using adobe xd always so it confuses me a bit to use figma. Recently, I just figured out that I could resize figma to see my windows taskbar hahaha, I feel ashamed a bit.
+
+### Continued development
+
+I will always continue to learn about next.js and creating different own projects with. Currently I have a ready made design for a big project of mine, hopefull I would be able to implement it properly and deploy^^
+
+## Author
+
+- Website - Well I haven't made my profile portfolio, gonna make it sooon when I know a lot of stuffs
+- Frontend Mentor - [@pikamart](https://www.frontendmentor.io/profile/pikamart)
+- Twitter - [@RaymartPamplona](https://twitter.com/RaymartPamplona)

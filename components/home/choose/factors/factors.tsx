@@ -17,7 +17,7 @@ const FactorsList = () =>{
         key={factor.id}
         initial="initial"
         whileInView="visible"
-        viewport={{once: true,amount: .5}}
+        viewport={{once: true,amount: .3}}
         variants={customSwipeUpVariant("15%", .55)}>
         <StyledFactorImage 
           src={factor.image} 

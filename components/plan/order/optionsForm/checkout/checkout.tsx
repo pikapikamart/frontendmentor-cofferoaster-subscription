@@ -18,6 +18,8 @@ import { useTrapFocus } from "@/lib/hooks";
 import { 
   checkoutVariant,
   customSwipeUpVariant } from "@/motion";
+import { coffeePricing } from "../optionsData";
+import { useTrackedState } from "@/store/tracked";
 
 
 interface CheckoutShape {
@@ -27,6 +29,7 @@ interface CheckoutShape {
 const Checkout = ({hideModal}: CheckoutShape) =>{
   const modalRef = useRef<HTMLDivElement | null>(null);
   const [ firstControl, lastControl, registerTrap ] = useTrapFocus<HTMLButtonElement, HTMLButtonElement>();
+  const coffeePrices = useTrackedState();
 
   const handleHideModal = () => {
     requestAnimationFrame(() =>{
@@ -35,6 +38,15 @@ const Checkout = ({hideModal}: CheckoutShape) =>{
       }
     })
   };
+
+  const computeTotalPrice = () =>{
+    const { price, increment } = coffeePricing["grams"][coffeePrices["coffee-quantity"]];
+    const dates = coffeePricing["dates"][coffeePrices["coffee-delivery"]];
+
+    const totalPrice = dates[0]? ( price + (increment * dates[0])) * dates[1] : price * 4;
+
+    return totalPrice.toFixed(2);
+  }
 
   useEffect(() =>{
     if ( modalRef.current ) {
@@ -59,12 +71,12 @@ const Checkout = ({hideModal}: CheckoutShape) =>{
           <Summary />
           <DarkText>Is this correct? You can proceed to checkout or go back to plan selection if something is off. Subscription discount codes can also be redeemed at the checkout. </DarkText>
           <StyledCheckoutPriceContainer>
-            <StyledCheckoutPrice>$14.00/mo</StyledCheckoutPrice>
+            <StyledCheckoutPrice>${computeTotalPrice()}/mo</StyledCheckoutPrice>
             <StyledCreatePlan as="button" 
             type="submit"
             ref={firstControl}>
               Checkout {` `}s
-              <span> {`  - $14.00/mo`}</span>
+              <span> {`  - $${computeTotalPrice()}/mo`}</span>
             </StyledCreatePlan>
           </StyledCheckoutPriceContainer>
           <StyledCheckoutGoBack ref={lastControl}
