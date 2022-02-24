@@ -25,7 +25,7 @@ const OrderStepsList = ({ textColor, bgColor } : OrderStepsShape) =>{
   const renderSteps = () =>{
     const steps = OrderStepsData.map(( step, index ) =>(
       <StyledOrderStep 
-        bgcolor={bgColor} 
+        $orderBackground={bgColor}
         key={step.id}
         initial="initial"
         whileInView="visible"
@@ -39,8 +39,7 @@ const OrderStepsList = ({ textColor, bgColor } : OrderStepsShape) =>{
         </StyledOrderStepNumber>
         <StyledOrderStepHeading textColor={textColor}>{step.name}</StyledOrderStepHeading>
         {textColor==="light"? 
-          <WhiteText>{step.description}</WhiteText> :
-          <DarkText>{step.description}</DarkText>
+          <WhiteText>{step.description}</WhiteText> : <DarkText>{step.description}</DarkText>
         }
       </StyledOrderStep>
     ));

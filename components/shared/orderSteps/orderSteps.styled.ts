@@ -32,7 +32,7 @@ export const StyledOrderStepList = styled(motion.ol)`
 `
 
 interface OrderStep {
-  bgcolor: "light" | "dark"
+  $orderBackground: "light" | "dark"
 }
 
 export const StyledOrderStep = styled(motion.li)<OrderStep>`
@@ -51,7 +51,7 @@ export const StyledOrderStep = styled(motion.li)<OrderStep>`
     transition: transform .5s linear;
   }
   
-  ${({ theme, bgcolor }) =>`
+  ${({ theme, $orderBackground }) =>`
     ${breakpoint("tablet", `
       flex-basis: 100%;
       max-width: ${rem(285)};
@@ -63,7 +63,7 @@ export const StyledOrderStep = styled(motion.li)<OrderStep>`
       }
 
       &:first-of-type {
-          background-image: ${bgcolor==="dark"? `linear-gradient(90deg, ${theme.colors.darkBlue} 0%, ${theme.colors.darkBlue} 15px, transparent 15px, transparent 100%)` : "none"};
+          background-image: ${$orderBackground==="dark"? `linear-gradient(90deg, ${theme.colors.darkBlue} 0%, ${theme.colors.darkBlue} 15px, transparent 15px, transparent 100%)` : "none"};
       }
 
       &:nth-of-type(2) {
@@ -71,15 +71,15 @@ export const StyledOrderStep = styled(motion.li)<OrderStep>`
       }
 
       &:last-of-type {
-        background-color: ${bgcolor==="light"? "#FFFFFF" : "transparent"};
+        background-color: ${$orderBackground==="light"? "#FFFFFF" : "transparent"};
         z-index: 10;
 
-        background-image: ${bgcolor==="dark"? `linear-gradient(90deg, transparent 0%, transparent 15px, ${theme.colors.darkBlue} 15px, ${theme.colors.darkBlue} 100%)` : "none"};
+        background-image: ${$orderBackground==="dark"? `linear-gradient(90deg, transparent 0%, transparent 15px, ${theme.colors.darkBlue} 15px, ${theme.colors.darkBlue} 100%)` : "none"};
       }
 
       &::before {
         content: "";
-        background-color: ${bgcolor==="light"? "#FFFFFF" : "transparent"};
+        background-color: ${$orderBackground==="light"? "#FFFFFF" : "transparent"};
         border-radius: 50%;
         border: 2px solid #0E8784;
         height: ${rem(31)};
