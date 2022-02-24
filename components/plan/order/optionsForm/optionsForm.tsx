@@ -18,13 +18,13 @@ const OptionsForm = () =>{
   const [ showModal, setShowModal ] = useState(false);
 
   const checkFormValidity = () =>{
-
-    for ( const [_, val] of Object.entries(coffeeChoices)) {
+    for ( const [key, val] of Object.entries(coffeeChoices)) {
       if ( !val ) {
-        if ( coffeeChoices["coffee-drinking"]==="Capsule" ) {
+        
+        if ( coffeeChoices["coffee-drinking"]==="Capsule" && key==="coffee-grind") {
           continue;
         }
-        else {
+        else{
           return false;
         }
       }

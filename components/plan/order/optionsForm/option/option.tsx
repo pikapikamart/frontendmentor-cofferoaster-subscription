@@ -35,12 +35,13 @@ const Option = ({data}: Option) =>{
   const renderChoices = () =>{
     const choices = data.choices.map(choice =>(
       <StyledOptionRadioWrapper key={choice.id}>
-        <StyledOptionRadio type="radio" 
+        <StyledOptionRadio 
+          type="radio" 
           id={choice.id}
           value={choice.label}
           onChange={handleChange}
-          checked={coffeeChoice[data.radioGroup]===choice.label}
-           />
+          name={data.radioGroup}
+          checked={coffeeChoice[data.radioGroup]===choice.label}/>
         <StyledOptionLabel htmlFor={choice.id}>
           <StyledOptionLabelHeading>
             {choice.label}
