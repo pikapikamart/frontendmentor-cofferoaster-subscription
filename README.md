@@ -65,7 +65,7 @@ The interactive subscription page has a number of specific behaviours, which are
 
 ### Links
 
-Live Site URL: [Live site of the challenge](https://frontendmentor-coffee-roaster-subscription.app/)
+Live Site URL: [Live site of the challenge](https://frontendmentor-coffeeroaster-subscription.app/)
 
 ## My process
 
