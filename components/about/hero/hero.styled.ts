@@ -7,7 +7,16 @@ import { HeroContainer } from "@/styled/shared/motions";
 import { 
   Heading2,
   HeroText } from "@/styled/shared/text.styled";
+import { motion } from "framer-motion";
 
+export const StyledHeroHeading = styled(motion.h1)`
+  line-height: 1.2;
+  margin-bottom: ${fluid(24, 3, 32)};
+
+  ${({ theme }) =>`
+    font-size: ${fluid(28, 4, theme.fontSizes.hSizeThree)};
+  `}
+`
 
 export const StyledHero = styled(HeroContainer)`
   background-image: url("/about/mobile/image-hero-whitecup.jpg");
@@ -22,7 +31,7 @@ export const StyledHero = styled(HeroContainer)`
     background-image: url("/about/desktop/image-hero-whitecup.jpg");
   `)}
 
-  & ${Heading2} {
+  & ${StyledHeroHeading} {
     margin: 0; 
   }
 
